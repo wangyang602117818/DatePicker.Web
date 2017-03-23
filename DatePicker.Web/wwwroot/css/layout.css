@@ -1,6 +1,7 @@
 ﻿* {
     margin: 0;
     padding: 0;
+    font-size: 13px;
 }
 
 .top {
@@ -27,17 +28,21 @@
     }
 
         .nav-top li a {
-            display: inline-block;
             font-family: 'Microsoft YaHei UI';
+            font-size: 15px;
             width: 100px;
             height: 50px;
             line-height: 50px;
-            text-align: center;
-            cursor: pointer;
-            color: #34495E;
-            text-decoration: none;
         }
 
             .nav-top li a:hover {
                 color: #3498DB;
             }
+
+a {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    color: #34495E;
+    text-decoration: none;
+}
