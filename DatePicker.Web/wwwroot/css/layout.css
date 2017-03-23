@@ -1,0 +1,43 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid #EB8C00;
+}
+
+.icon {
+    color: #3498DB;
+    width: 50px;
+    text-align: center;
+}
+
+.nav-top {
+    list-style: none;
+}
+
+    .nav-top li {
+        float: left;
+    }
+
+        .nav-top li a {
+            display: inline-block;
+            font-family: 'Microsoft YaHei UI';
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+            color: #34495E;
+            text-decoration: none;
+        }
+
+            .nav-top li a:hover {
+                color: #3498DB;
+            }

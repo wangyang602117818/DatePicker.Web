@@ -4,32 +4,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
-    <link href="~/css/site.css" rel="stylesheet" />
-    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <environment names="Development">
-
+        <link href="~/css/layout.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
     </environment>
     <environment names="Staging,Production">
-
+       
     </environment>
     <style>
-        .top {
-            display: flex;
-            border: 1px solid red;
-            width: 80%;
-            margin: 0 auto;
-            height: 50px;
-            align-items:center;
-        }
-        .icon{
-            color:#000;
-
-        }
+        
     </style>
 </head>
 <body>
     <div class="top">
-        <a class="fa fa-calendar-o fa-2x icon" href="#"></a>
+        <a class="fa fa-calendar-check-o fa-2x icon" href="#"></a>
+        <ul class="nav-top">
+            <li>
+                <a href="" class="current">首页</a>
+            </li>
+            <li>
+                <a href="">功能</a>
+            </li>
+            <li>
+                <a href="">多语言</a>
+            </li>
+            <li>
+                <a href="">皮肤</a>
+            </li>
+            <li>
+                <a href="">文本框</a>
+            </li>
+        </ul>
     </div>
     @RenderBody()
 
