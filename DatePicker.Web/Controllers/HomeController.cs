@@ -14,7 +14,10 @@ namespace DatePicker.Web.Controllers
             
             return View();
         }
-
+        public IActionResult Begin()
+        {
+            return View();
+        }
 
     }
 }

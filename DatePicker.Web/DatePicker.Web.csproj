@@ -16,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\css\home-begin.css" />
+    <Content Include="wwwroot\css\home-index.css" />
     <Content Include="wwwroot\css\layout.css" />
   </ItemGroup>
   <ItemGroup>

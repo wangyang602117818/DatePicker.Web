@@ -7,6 +7,7 @@
     <environment names="Development">
         <link href="~/css/layout.css" rel="stylesheet" />
         <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        @RenderSection("script")
     </environment>
     <environment names="Staging,Production">
        
@@ -17,10 +18,10 @@
 </head>
 <body>
     <div class="top">
-        <a class="fa fa-calendar-check-o fa-2x icon" href="#"></a>
+        <a class="fa fa-calendar-check-o fa-2x icon" href="/home/index"></a>
         <ul class="nav-top">
             <li>
-                <a href="" class="home">首页</a>
+                <a href="/home/index" class="home">首页</a>
             </li>
             <li>
                 <a href="" class="feature">功能</a>
@@ -34,9 +35,15 @@
             <li>
                 <a href="" class="input">文本框</a>
             </li>
+            <li>
+                <a href="" class="download">下载</a>
+            </li>
         </ul>
     </div>
-    @RenderBody()
+    <div class="middle">
+        
+        @RenderBody()
+    </div>
 
 </body>
 </html>

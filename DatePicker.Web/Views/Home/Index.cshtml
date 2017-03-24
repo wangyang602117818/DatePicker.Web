@@ -1,75 +1,24 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<style>
-    .nav-top li .home {
-        color: #3498DB;
-        border-bottom: 2px solid #3498DB;
-    }
-    .middle {
-        display: flex;
-        width: 75%;
-        margin: 0 auto;
-        min-height: 550px;
-        margin-top: 15px;
-    }
-
-    .left {
-        flex: 1;
-    }
-
-    .right {
-        flex: 8;
-    }
-
-    .sub_left {
-        list-style: none;
-        border: 1px solid #E8EBF0;
-        min-height: 250px;
-        /*background-color: #F8F8FF;*/
-    }
-
-        .sub_left a {
-            width: 100%;
-            height: 35px;
-            line-height: 35px;
-            border-bottom: 1px solid #E8EBF0;
-            color: #586072;
-            border-left: 2px solid transparent;
-        }
-
-            .sub_left a:hover {
-                border-left: 2px solid #E36209;
-                color: #FF8C00;
-            }
-
-    .right {
-        margin-left: 10px;
-        padding-left: 15px;
-        color: #34495E;
-        line-height: 25px;
-    }
-</style>
-<div class="middle">
-    <div class="left">
-        <ul class="sub_left">
-            <li>
-                <a href=""><i class="fa fa-list-ul" aria-hidden="true"></i> 简介</a>
-                <a href=""><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> 开始</a>
-            </li>
-        </ul>
-    </div>
-    <div class="right">
-        <h5>简介</h5>
-        1) 使用简单<br />
-        &nbsp;&nbsp;只需引入一个js文件，然后往 input 控件上加上class="datepicker",就搞定了！<br />
-        2) 无样式冲突<br />
-        &nbsp;&nbsp;使用 iframe 框架，样式在 iframe 内部加载，原有项目的样式与它互不影响！<br />
-        3) 限制时间范围<br />
-        &nbsp;&nbsp;通过在 input 标签上加属性 date-start，date-end,就可以限制选取的日期范围。<br />
-        4) 多语言支持<br />
-        &nbsp;&nbsp;目前支持 中文、英文 两种界面。<br />
-        5）多皮肤支持<br />
-        &nbsp;&nbsp;目前支持青色、橙色 两种皮肤。<br />
-    </div>
+@section script{
+    <link href="~/css/home-index.css" rel="stylesheet" />
+}
+@Html.Partial("Partial")
+<div class="right">
+    <h5>简介</h5>
+    1) 使用简单<br />
+    &nbsp;&nbsp;只需引入一个js文件，然后往 input 控件上加上 <font color="#649300">class="datepicker"</font>,就搞定了！<br />
+    2) 无样式冲突<br />
+    &nbsp;&nbsp;使用 iframe 框架，样式在 iframe 内部加载，原有项目的样式与它互不影响！<br />
+    3) 限制时间范围<br />
+    &nbsp;&nbsp;通过在 input 标签上加属性 <font color="#649300">
+        date-start
+    </font>，<font color="#649300">
+        date-end
+    </font>,就可以限制选取的日期范围。<br />
+    4) 多语言支持<br />
+    &nbsp;&nbsp;目前支持 中文、英文 两种界面。<br />
+    5）多皮肤支持<br />
+    &nbsp;&nbsp;目前支持青色、橙色 两种皮肤。<br />
 </div>
