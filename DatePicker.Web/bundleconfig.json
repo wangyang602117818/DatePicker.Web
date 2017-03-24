@@ -20,5 +20,24 @@
     },
     // Optionally generate .map file
     "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/datepicker/datepicker.min.js",
+    "inputFiles": [
+      "datepicker/datepicker.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/datepicker/datepicker-cyan.min.css",
+    "inputFiles": [
+      "datepicker/datepicker-cyan.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/datepicker/datepicker-orange.min.css",
+    "inputFiles": [
+      "datepicker/datepicker-orange.css"
+    ]
   }
+
 ]

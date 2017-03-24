@@ -2,6 +2,10 @@
     ViewData["Title"] = "Home Page";
 }
 <style>
+    .nav-top li .home {
+        color: #3498DB;
+        border-bottom: 2px solid #3498DB;
+    }
     .middle {
         display: flex;
         width: 75%;
@@ -33,10 +37,18 @@
             color: #586072;
             border-left: 2px solid transparent;
         }
+
             .sub_left a:hover {
                 border-left: 2px solid #E36209;
                 color: #FF8C00;
             }
+
+    .right {
+        margin-left: 10px;
+        padding-left: 15px;
+        color: #34495E;
+        line-height: 25px;
+    }
 </style>
 <div class="middle">
     <div class="left">
@@ -48,6 +60,16 @@
         </ul>
     </div>
     <div class="right">
-
+        <h5>简介</h5>
+        1) 使用简单<br />
+        &nbsp;&nbsp;只需引入一个js文件，然后往 input 控件上加上class="datepicker",就搞定了！<br />
+        2) 无样式冲突<br />
+        &nbsp;&nbsp;使用 iframe 框架，样式在 iframe 内部加载，原有项目的样式与它互不影响！<br />
+        3) 限制时间范围<br />
+        &nbsp;&nbsp;通过在 input 标签上加属性 date-start，date-end,就可以限制选取的日期范围。<br />
+        4) 多语言支持<br />
+        &nbsp;&nbsp;目前支持 中文、英文 两种界面。<br />
+        5）多皮肤支持<br />
+        &nbsp;&nbsp;目前支持青色、橙色 两种皮肤。<br />
     </div>
 </div>

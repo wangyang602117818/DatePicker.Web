@@ -31,8 +31,10 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="wwwroot\datepicker\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\datepicker\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DatePicker.Common\DatePicker.Common.csproj" />
