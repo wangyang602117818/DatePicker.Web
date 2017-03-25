@@ -19,6 +19,8 @@
     <Content Include="wwwroot\css\home-begin.css" />
     <Content Include="wwwroot\css\home-index.css" />
     <Content Include="wwwroot\css\layout.css" />
+    <Content Include="wwwroot\css\loading.css" />
+    <Content Include="wwwroot\js\loading.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.4.337" />
@@ -35,8 +37,10 @@
   <ItemGroup>
     <Folder Include="wwwroot\datepicker\" />
     <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\js\" />
     <Folder Include="wwwroot\datepicker\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\html\intro.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DatePicker.Common\DatePicker.Common.csproj" />

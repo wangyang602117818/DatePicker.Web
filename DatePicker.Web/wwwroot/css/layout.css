@@ -4,9 +4,11 @@
     font-size: 13px;
     font-family: 宋体;
 }
+
 body {
     background-color: #EFF3F5;
 }
+
 .top {
     display: flex;
     width: 75%;
@@ -14,7 +16,7 @@ body {
     height: 50px;
     align-items: center;
     border-bottom: 1px solid #EB8C00;
-    background-color:#fff;
+    background-color: #fff;
 }
 
 .icon {
@@ -69,32 +71,34 @@ a {
 .left {
     flex: 1;
     background-color: #fff;
+    margin-right:10px;
 }
 
 .right {
     flex: 8;
     background-color: #fff;
-    margin-left: 10px;
+    border:1px solid #fff;
     padding-left: 15px;
     color: #34495E;
     line-height: 25px;
+    overflow: hidden;
 }
 
 .sub_left {
     list-style: none;
-    /*border: 1px solid #E8EBF0;*/
     min-height: 250px;
 }
 
-    .sub_left a {
+    .sub_left li {
+        text-align: center;
+        cursor: pointer;
         width: 100%;
         height: 35px;
         line-height: 35px;
-        /*border-top: 1px solid #E8EBF0;*/
         color: #586072;
         border-left: 2px solid transparent;
     }
 
-        .sub_left a:hover {
+        .sub_left li:hover {
             background-color: #EFF3F5;
         }

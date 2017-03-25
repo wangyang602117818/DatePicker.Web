@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/js/loading.js"></script>
         <link href="~/css/layout.css" rel="stylesheet" />
         <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/css/loading.css" rel="stylesheet" />
         @RenderSection("script")
     </environment>
     <environment names="Staging,Production">
@@ -41,9 +44,7 @@
         </ul>
     </div>
     <div class="middle">
-        
         @RenderBody()
     </div>
-
 </body>
 </html>
