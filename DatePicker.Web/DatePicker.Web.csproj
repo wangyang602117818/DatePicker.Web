@@ -20,6 +20,16 @@
     <Content Include="wwwroot\css\home-index.css" />
     <Content Include="wwwroot\css\layout.css" />
     <Content Include="wwwroot\css\loading.css" />
+    <Content Include="wwwroot\datepicker\jquery.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\datepicker\jquery.min.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\datepicker\jquery.min.map">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\html\begin.html" />
     <Content Include="wwwroot\js\loading.js" />
   </ItemGroup>
   <ItemGroup>
@@ -35,11 +45,10 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\datepicker\" />
     <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\datepicker\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="wwwroot\htmlpage.html" />
     <None Include="wwwroot\html\intro.html" />
   </ItemGroup>
   <ItemGroup>

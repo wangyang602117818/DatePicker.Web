@@ -6,23 +6,30 @@
 }
 <script type="text/javascript">
     $(function () {
+        var current = $(".sub_left .current");
+        var right_con = $(".right");
         $(".sub_left li").click(function () {
-            var html_url = $(this).attr("html");
-            $(".right").loading();
+            var item = $(this);
+            var html_url = item.attr("html");
+            right_con.loading();
             $.get(html_url, function (data) {
-                $(".right").html(data);
-
-            })
-
+                right_con.loading();
+                right_con.html(data);
+                if (item.hasClass("current")) return;
+                item.addClass("current");
+                current.removeClass("current");
+                current = item;
+            });
         });
+        current.click();
     });
 </script>
 <div class="left">
     <ul class="sub_left">
-        <li class="intro" html="/html/intro.html">
+        <li class="current" html="/html/intro.html">
             <i class="fa fa-list-ul" aria-hidden="true"></i> 简介
         </li>
-        <li class="begin" html="/html/begin.html">
+        <li html="/html/begin.html">
             <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> 开始
         </li>
     </ul>
