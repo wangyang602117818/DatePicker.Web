@@ -11,7 +11,7 @@
         <link href="~/css/layout.css" rel="stylesheet" />
         <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
         <link href="~/css/loading.css" rel="stylesheet" />
-        @RenderSection("script")
+        @RenderSection("script", false)
     </environment>
     <environment names="Staging,Production">
        
@@ -28,16 +28,7 @@
                 <a href="/home/index" class="home">首页</a>
             </li>
             <li>
-                <a href="" class="feature">功能</a>
-            </li>
-            <li>
-                <a href="" class="multilanguage">多语言</a>
-            </li>
-            <li>
-                <a href="" class="skin">皮肤</a>
-            </li>
-            <li>
-                <a href="" class="input">文本框</a>
+                <a href="/feature/index" class="feature">功能</a>
             </li>
             <li>
                 <a href="" class="download">下载</a>

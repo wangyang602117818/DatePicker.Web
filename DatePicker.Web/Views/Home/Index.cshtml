@@ -1,9 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@section script{
-    <link href="~/css/home-index.css" rel="stylesheet" />
-}
+<style>
+    .nav-top li .home {
+        color: #3498DB;
+        border-bottom: 2px solid #3498DB;
+    }
+</style>
+
 <script type="text/javascript">
     $(function () {
         var current = $(".sub_left .current");
@@ -15,10 +19,12 @@
             $.get(html_url, function (data) {
                 right_con.loading();
                 right_con.html(data);
-                if (item.hasClass("current")) return;
-                item.addClass("current");
-                current.removeClass("current");
-                current = item;
+                if (!item.hasClass("current")) {
+                    item.addClass("current");
+                    current.removeClass("current");
+                    current = item;
+                }
+                datepicker();
             });
         });
         current.click();

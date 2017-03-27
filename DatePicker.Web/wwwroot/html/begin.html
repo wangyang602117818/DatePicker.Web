@@ -1,24 +1,29 @@
-﻿<script>
-    $(function () {
-        var url = document.location.origin + "/datepicker.zip";
-        var jquery = document.location.origin + "/lib/jquery/dist/jquery.js";
-        var js = document.location.origin + "/datepicker/datepicker.min.js";
-        var template = document.location.origin + "/datepicker/datepicker-template.html";
-        var css = document.location.origin + "/datepicker/datepicker-orange.min.css";
-        $("#datepickerzip").html("<a href='" + url + "' style=\"color:#217AC0\">" + url + "</a>");
-        $("#datepickerjs").html(js);
-        $("#datepickertemplate").html(template);
-        $("#datepickercss").html(css);
-        $("#jquery").html(jquery);
-        console.log(jquery);
-    });
-</script>
+﻿<style>
+    .datepicker {
+        padding: 4px 8px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        color: #333;
+        outline: none;
+    }
+
+        .datepicker:focus {
+            border-color: #51A7E8;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(103, 166, 217, 0.5);
+        }
+
+    .sub_left .begin {
+        border-left: 2px solid #E36209;
+        color: #FF8C00;
+    }
+</style>
 <h5>开始</h5>
 1) 下载： <span id="datepickerzip"></span><br />
 2) 添加 jquery 和 datepicker.min.js 引用（添加 datepicker.min.js 引用的时候，必须在script中指定 template 和 css 两个属性)<br />
-    &nbsp;&nbsp;&lt;script src="datepicker/datepicker.min.js" <font color="red">template</font>="datepicker/datepicker-template.html" <font color="red">css</font>="datepicker/datepicker-origin.min.css"&gt;&lt;/script&gt; <br />
+    &nbsp;&nbsp;&lt;script src="datepicker/datepicker.min.js" <font color="red">template</font>="datepicker-template.html的路径" <font color="red">css</font>="datepicker-origin.min.css的路径"&gt;&lt;/script&gt; <br />
 3) 在 input 标签中添加 class="datepicker" 样式，ok！ <br />
-4) 示例代码 ：<input class="datepicker" />
+4-1) 示例代码
 <br />
 <div style="padding-left:10px;color:green">
     &lt;!DOCTYPE html&gt;<br />
@@ -28,10 +33,25 @@
     &lt;title>&lt;/title&gt;<br />
     &nbsp; &lt;script src="<span id='jquery'></span>"&gt;&lt;/script&gt;<br />
     &nbsp;  &lt;script src="<span id='datepickerjs'></span>" template="<span id='datepickertemplate'></span>" css="<span id='datepickercss'></span>">&lt;/script&gt;<br />
-
     &lt;/head&gt;<br />
     &lt;body&gt;<br />
     &nbsp; &lt;input type="text" class="datepicker" /&gt;<br />
     &lt;/body&gt;<br />
     &lt;/html&gt;<br />
 </div>
+4-2) 运行效果：<br />
+&nbsp;<input class="datepicker" />
+<script>
+    $(function () {
+        var url = document.location.origin + "/datepicker.zip";
+        var jquery = "/lib/jquery/dist/jquery.js";
+        var js = "/datepicker/datepicker.min.js";
+        var template = "/datepicker/datepicker-template.html";
+        var css = "/datepicker/datepicker-orange.min.css";
+        $("#datepickerzip").html("<a href='" + url + "' style=\"color:#217AC0\">" + url + "</a>");
+        $("#datepickerjs").html(js);
+        $("#datepickertemplate").html(template);
+        $("#datepickercss").html(css);
+        $("#jquery").html(jquery);
+    });
+</script>
