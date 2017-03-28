@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Feature";
 }
+@section script{
+    <script src="~/js/side.js"></script>
+}
 <style>
     .nav-top li .feature {
         color: #3498DB;
@@ -9,26 +12,26 @@
 </style>
 <div class="left">
     <ul class="sub_left">
-        <li class="current" html="">
+        <li class="current" html="/html/time.html">
             <i class="fa fa-clock-o" aria-hidden="true"></i> 时间
         </li>
-        <li html="">
+        <li html="/html/format.html">
             <i class="fa fa-hashtag" aria-hidden="true"></i> 格式
         </li>
-        <li html="">
+        <li html="/html/range.html">
             <i class="fa fa-bullseye" aria-hidden="true"></i> 范围
         </li>
-        <li html="">
+        <li html="/html/init.html">
             <i class="fa fa-refresh" aria-hidden="true"></i> Init
         </li>
-        <li html="">
+        <li html="/html/language.html">
             <i class="fa fa-globe" aria-hidden="true"></i> 语言
         </li>
-        <li html="">
-            <i class="fa fa-refresh" aria-hidden="true"></i> 皮肤
+        <li html="/html/skin.html">
+            <i class="fa fa-star-half-o" aria-hidden="true"></i> 皮肤
         </li>
-        <li html="">
-            <i class="fa fa-refresh" aria-hidden="true"></i> 样式
+        <li html="/html/style.html">
+            <i class="fa fa-magic" aria-hidden="true"></i> 样式
         </li>
     </ul>
 </div>

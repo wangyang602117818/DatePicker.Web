@@ -20,7 +20,10 @@
     <Content Include="wwwroot\css\layout.css" />
     <Content Include="wwwroot\css\loading.css" />
     <Content Include="wwwroot\html\begin.html" />
+    <Content Include="wwwroot\html\format.html" />
+    <Content Include="wwwroot\html\time.html" />
     <Content Include="wwwroot\js\loading.js" />
+    <Content Include="wwwroot\js\side.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.4.337" />

@@ -1,0 +1,26 @@
+<h5>初始化</h5>
+在之前的例子中，datepicker.min.js 初始化页面总是发生在页面加载完成之后，但是当我们手动修改了页面的时候需要再次初始化 datepicker 。<br/>
+案例一：通过 js 改变了 <font color="green">date-val</font> 的值，需要把改变呈现到界面，则调用 datepicker() 方法。<br/>
+&nbsp;示例：<br />
+<div style="padding-left: 5px;color:green">
+&lt;script&gt;<br />
+&nbsp;  $(function () { <br />
+&nbsp;&nbsp;    $("#txt1").attr("date-val", "2017-03-16 13:05:15").datepicker(); <br />
+&nbsp;  }); <br />
+&lt;/script&gt; <br />
+&lt;body&gt;<br />
+&nbsp; &lt;input type="text" name="txt" id="txt1" class="datepicker" /&gt;<br />
+&lt;/body&gt;
+</div>
+案例二：整个 input 框都是用js输出到界面的，则调用 datepicker() 方法初始化。<br/>
+&nbsp;示例：<br />
+<div style="padding-left: 5px;color:green">
+&lt;script&gt;<br />
+&nbsp;  $(function () { <br />
+&nbsp;&nbsp;    document.body.innerHTML = "&lt;input type=\"text\" class=\"datepicker\" /&gt;";<br />
+&nbsp;&nbsp;    datepicker();<br />
+&nbsp;  }); <br />
+&lt;/script&gt; <br />
+&lt;body&gt;<br />
+&lt;/body&gt;
+</div>
