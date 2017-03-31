@@ -21,6 +21,8 @@
     <Content Include="wwwroot\css\loading.css" />
     <Content Include="wwwroot\html\begin.html" />
     <Content Include="wwwroot\html\format.html" />
+    <Content Include="wwwroot\html\skin-cyan.html" />
+    <Content Include="wwwroot\html\skin-orange.html" />
     <Content Include="wwwroot\html\time.html" />
     <Content Include="wwwroot\js\loading.js" />
     <Content Include="wwwroot\js\side.js" />

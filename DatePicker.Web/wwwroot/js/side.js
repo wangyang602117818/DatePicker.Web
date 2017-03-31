@@ -3,7 +3,10 @@
     var right_con = $(".right");
     $(".sub_left li").click(function () {
         var item = $(this);
+
         var html_url = item.attr("html");
+        var params = item.attr("params");
+        console.log(params);
         right_con.loading();
         $.get(html_url, function (data) {
             right_con.loading();
