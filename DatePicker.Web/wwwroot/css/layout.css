@@ -6,7 +6,10 @@
 }
 
 body {
-    background-color: #EFF3F5;
+    background-color: #EEEEEE;
+    background-image: url("../images/bg.jpg");
+     background-repeat:no-repeat;
+     background-size:100%;
 }
 
 .top {
@@ -15,8 +18,9 @@ body {
     margin: 0 auto;
     height: 40px;
     align-items: center;
-    border-bottom: 1px solid #EB8C00;
     background-color: #fff;
+    filter:alpha(opacity=90);
+    opacity:0.9;
 }
 
 .icon {
@@ -78,7 +82,6 @@ a {
 .right {
     flex: 8;
     background-color: #fff;
-    border: 1px solid #fff;
     padding-left: 15px;
     color: #34495E;
     line-height: 25px;
@@ -88,6 +91,7 @@ a {
 .sub_left {
     list-style: none;
     min-height: 250px;
+    overflow: hidden;
 }
 
     .sub_left li {
@@ -107,4 +111,13 @@ a {
     .sub_left .current {
         border-left: 2px solid #E36209;
         color: #FF8C00;
+        background-color: #E4E9EC
     }
+/*.bottom {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    min-height: 50px;
+    margin-top: 70px;
+    background-color:#fff; 
+}*/
