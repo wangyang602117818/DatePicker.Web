@@ -5,7 +5,7 @@
         start: "1900-01-01 00:00:00",      //start: new Date(),
         end: "2100-12-31 00:00:00",        //end: new Date().addYear(1)
         useFormat: "yyyy-MM-dd",           //与程序交互的时间格式
-        lang: "en-us"                    //界面语言 en-us|zh-cn,
+        lang: "en-us"                //界面语言 en-us|zh-cn,
     };
     var scr = document.getElementsByTagName('SCRIPT');
     var template_src = $(scr[scr.length - 1]).attr("template");
