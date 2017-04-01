@@ -7,7 +7,7 @@
 
 body {
     background-color: #EEEEEE;
-    /*background-image: url("../images/bg.jpg");*/
+    background-image: url("../images/bg.jpg");
      background-repeat:no-repeat;
      background-size:100%;
 }
@@ -19,8 +19,6 @@ body {
     height: 40px;
     align-items: center;
     background-color: #fff;
-    filter:alpha(opacity=90);
-    opacity:0.9;
 }
 
 .icon {
