@@ -26,6 +26,7 @@
     <Content Include="wwwroot\css\loading.css" />
     <Content Include="wwwroot\html\begin.html" />
     <Content Include="wwwroot\html\format.html" />
+    <Content Include="wwwroot\html\images.html" />
     <Content Include="wwwroot\html\skin-cyan.html" />
     <Content Include="wwwroot\html\skin-orange.html" />
     <Content Include="wwwroot\html\time.html" />
@@ -54,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\datepicker\datepicker-template.html" />
-    <None Include="wwwroot\htmlpage.html" />
     <None Include="wwwroot\html\intro.html" />
   </ItemGroup>
   <ItemGroup>
