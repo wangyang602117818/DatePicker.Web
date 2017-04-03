@@ -25,12 +25,25 @@
     <Content Include="wwwroot\css\layout.css" />
     <Content Include="wwwroot\css\loading.css" />
     <Content Include="wwwroot\html\begin.html" />
+    <Content Include="wwwroot\html\en\begin.html" />
+    <Content Include="wwwroot\html\en\download.html" />
+    <Content Include="wwwroot\html\en\format.html" />
+    <Content Include="wwwroot\html\en\images.html" />
+    <Content Include="wwwroot\html\en\init.html" />
+    <Content Include="wwwroot\html\en\intro.html" />
+    <Content Include="wwwroot\html\en\language.html" />
+    <Content Include="wwwroot\html\en\range.html" />
+    <Content Include="wwwroot\html\en\skin-cyan.html" />
+    <Content Include="wwwroot\html\en\skin-orange.html" />
+    <Content Include="wwwroot\html\en\skin.html" />
+    <Content Include="wwwroot\html\en\sourcecode.html" />
+    <Content Include="wwwroot\html\en\style.html" />
+    <Content Include="wwwroot\html\en\time.html" />
     <Content Include="wwwroot\html\format.html" />
     <Content Include="wwwroot\html\images.html" />
     <Content Include="wwwroot\html\skin-cyan.html" />
     <Content Include="wwwroot\html\skin-orange.html" />
     <Content Include="wwwroot\html\time.html" />
-    <Content Include="wwwroot\images\date.png" />
     <Content Include="wwwroot\js\loading.js" />
     <Content Include="wwwroot\js\side.js" />
   </ItemGroup>
@@ -52,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Feature\" />
+    <Folder Include="wwwroot\html\zh\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\datepicker\datepicker-template.html" />
