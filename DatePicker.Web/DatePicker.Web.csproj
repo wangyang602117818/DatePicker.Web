@@ -64,6 +64,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="resources\" />
     <Folder Include="Views\Feature\" />
     <Folder Include="wwwroot\html\zh\" />
   </ItemGroup>
