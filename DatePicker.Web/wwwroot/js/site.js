@@ -24,6 +24,11 @@
     }else{
       current.click();
     }
+    $(".lang_bar_txt").click(function(){
+       var code = $(this).attr("code");
+       var backUrl = window.location.href;
+       window.location.href="/home/language/?culture="+code+"&backurl="+backUrl;
+    });
 });
 function getQueryString(name) { 
    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 

@@ -1,5 +1,8 @@
+@using Microsoft.Extensions.Localization
+@using DatePicker.Web
+@inject IStringLocalizer<Shared> Localizer
 @{
-    ViewData["Title"] = "下载";
+    ViewData["Title"] = Localizer["download"];
 }
 <style>
     .nav-top li .download {
@@ -9,14 +12,14 @@
 </style>
 <div class="left">
     <ul class="sub_left">
-        <li class="current" html="/html/en/download.html" id="download" params="?tag=download">
-            <i class="fa fa-download" aria-hidden="true"></i> 下载
+        <li class="current" html=@Localizer["downloadurl"] id="download" params="?tag=download">
+            <i class="fa fa-download" aria-hidden="true"></i>&nbsp;@Localizer["download"]
         </li>
-        <li html="/html/en/sourcecode.html" id="sourcecode" params="?tag=sourcecode">
-            <i class="fa fa-code" aria-hidden="true"></i> 源码
+        <li html=@Localizer["sourcecodeurl"] id="sourcecode" params="?tag=sourcecode">
+            <i class="fa fa-code" aria-hidden="true"></i>&nbsp;@Localizer["sourcecode"]
         </li>
-        <li html="/html/en/images.html" id="images" params="?tag=images">
-            <i class="fa fa-picture-o" aria-hidden="true"></i> 素材
+        <li html=@Localizer["sourceurl"] id="source" params="?tag=source">
+            <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;@Localizer["source"]
         </li>
     </ul>
 </div>

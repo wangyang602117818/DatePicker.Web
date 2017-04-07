@@ -1,5 +1,8 @@
-﻿@{
-    ViewData["Title"] = "功能";
+﻿@using Microsoft.Extensions.Localization
+@using DatePicker.Web
+@inject IStringLocalizer<Shared> Localizer
+@{
+    ViewData["Title"] = @Localizer["features"];
 }
 <style>
     .nav-top li .feature {
@@ -9,26 +12,26 @@
 </style>
 <div class="left">
     <ul class="sub_left">
-        <li class="current" html="/html/en/time.html" id="time" params="?tag=time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i> 时间
+        <li class="current" html=@Localizer["timeurl"] id="time" params="?tag=time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;@Localizer["time"]
         </li>
-        <li html="/html/en/format.html" id="format" params="?tag=format">
-            <i class="fa fa-hashtag" aria-hidden="true"></i> 格式
+        <li html=@Localizer["formaturl"] id="format" params="?tag=format">
+            <i class="fa fa-cube" aria-hidden="true"></i>&nbsp;@Localizer["format"]
         </li>
-        <li html="/html/en/range.html" id="range" params="?tag=range">
-            <i class="fa fa-bullseye" aria-hidden="true"></i> 范围
+        <li html=@Localizer["rangeurl"] id="range" params="?tag=range">
+            <i class="fa fa-bullseye" aria-hidden="true"></i>&nbsp;@Localizer["range"]
         </li>
-        <li html="/html/en/init.html" id="init" params="?tag=init">
-            <i class="fa fa-refresh" aria-hidden="true"></i> Init
+        <li html=@Localizer["initurl"] id="init" params="?tag=init">
+            <i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;@Localizer["init"]
         </li>
-        <li html="/html/en/language.html" id="language" params="?tag=language">
-            <i class="fa fa-globe" aria-hidden="true"></i> 语言
+        <li html=@Localizer["languageurl"] id="language" params="?tag=language">
+            <i class="fa fa-globe" aria-hidden="true"></i>&nbsp;@Localizer["language"]
         </li>
-        <li html="/html/en/skin.html" id="skin" params="?tag=skin">
-            <i class="fa fa-star-half-o" aria-hidden="true"></i> 皮肤
+        <li html=@Localizer["skinurl"] id="skin" params="?tag=skin">
+            <i class="fa fa-star-half-o" aria-hidden="true"></i>&nbsp;@Localizer["skin"]
         </li>
-        <li html="/html/en/style.html" id="style" params="?tag=style">
-            <i class="fa fa-magic" aria-hidden="true"></i> 样式
+        <li html=@Localizer["styleurl"] id="style" params="?tag=style">
+            <i class="fa fa-magic" aria-hidden="true"></i>&nbsp;@Localizer["style"]
         </li>
     </ul>
 </div>

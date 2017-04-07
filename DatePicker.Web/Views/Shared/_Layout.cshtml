@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.Extensions.Localization
+@using DatePicker.Web
+@inject IStringLocalizer<Shared> Localizer
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -7,19 +10,14 @@
     <meta name="description" content="datepicker,calendar,日历控件,日历框,日历">
     <link rel='icon' href='~/images/date.ico' type='image/x-ico' />
     <title>@ViewData["Title"]</title>
-    <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/js/loading.js"></script>
-        <script src="~/js/side.js"></script>
-        <script src="~/datepicker/datepicker.min.js" template="/datepicker/datepicker-template.html" css="/datepicker/datepicker-orange.min.css"></script>
-        <link href="~/css/layout.css" rel="stylesheet" />
-        <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        <link href="~/css/loading.css" rel="stylesheet" />
-        @RenderSection("script", false)
-    </environment>
-    <environment names="Staging,Production">
-       
-    </environment>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/loading.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/datepicker/datepicker.min.js" template="/datepicker/datepicker-template.html" css="/datepicker/datepicker-orange.min.css"></script>
+    <link href="~/css/layout.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/loading.css" rel="stylesheet" />
+    @RenderSection("script", false)
     <style>
         
     </style>
@@ -29,13 +27,13 @@
         <a class="fa fa-calendar-check-o fa-2x icon" href="/home/intro"></a>
         <ul class="nav-top">
             <li>
-                <a href="/home/index" class="home">首页</a>
+                <a href="/home/index" class="home">@Localizer["home"]</a>
             </li>
             <li>
-                <a href="/feature/index" class="feature">功能</a>
+                <a href="/feature/index" class="feature">@Localizer["features"]</a>
             </li>
             <li>
-                <a href="/download/index" class="download">下载</a>
+                <a href="/download/index" class="download">@Localizer["download"]</a>
             </li>
         </ul>
     </div>
@@ -45,5 +43,13 @@
     <div class="bottom">
         xxx备案号
     </div>
+    <div class="lang_bar">
+        <a class="lang_bar_txt lang_bar_en" code="en-us">EN</a>
+        <a class="lang_bar_txt lang_bar_zh" code="zh-cn">中</a>
+    </div>
+
 </body>
 </html>
+<script>
+  
+</script>

@@ -1,5 +1,8 @@
-﻿@{
-    ViewData["Title"] = "首页";
+﻿@using Microsoft.Extensions.Localization
+@using DatePicker.Web
+@inject IStringLocalizer<Shared> Localizer
+@{
+    ViewData["Title"] = @Localizer["home"];
 }
 <style>
     .nav-top li .home {
@@ -10,8 +13,8 @@
 
 <div class="left">
     <ul class="sub_left">
-        <li class="current" html="/html/en/begin.html" id="home" params="?tag=home">
-            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> 入门
+        <li class="current" html="@Localizer["beginurl"]" id="begin" params="?tag=begin">
+            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>&nbsp;@Localizer["begin"]
         </li>
     </ul>
 </div>

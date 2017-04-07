@@ -24,11 +24,10 @@
     <Content Include="wwwroot\css\home-begin.css" />
     <Content Include="wwwroot\css\layout.css" />
     <Content Include="wwwroot\css\loading.css" />
-    <Content Include="wwwroot\html\begin.html" />
     <Content Include="wwwroot\html\en\begin.html" />
     <Content Include="wwwroot\html\en\download.html" />
     <Content Include="wwwroot\html\en\format.html" />
-    <Content Include="wwwroot\html\en\images.html" />
+    <Content Include="wwwroot\html\en\source.html" />
     <Content Include="wwwroot\html\en\init.html" />
     <Content Include="wwwroot\html\en\intro.html" />
     <Content Include="wwwroot\html\en\language.html" />
@@ -39,24 +38,48 @@
     <Content Include="wwwroot\html\en\sourcecode.html" />
     <Content Include="wwwroot\html\en\style.html" />
     <Content Include="wwwroot\html\en\time.html" />
-    <Content Include="wwwroot\html\format.html" />
-    <Content Include="wwwroot\html\images.html" />
-    <Content Include="wwwroot\html\skin-cyan.html" />
-    <Content Include="wwwroot\html\skin-orange.html" />
-    <Content Include="wwwroot\html\time.html" />
+    <Content Include="wwwroot\html\zh\begin.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\html\zh\download.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\html\zh\format.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\html\zh\init.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\html\zh\intro.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\html\zh\language.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\html\zh\range.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\html\zh\skin-cyan.html" />
+    <Content Include="wwwroot\html\zh\skin-orange.html" />
+    <Content Include="wwwroot\html\zh\skin.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\html\zh\source.html" />
+    <Content Include="wwwroot\html\zh\sourcecode.html" />
+    <Content Include="wwwroot\html\zh\style.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\html\zh\time.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="wwwroot\js\loading.js" />
     <Content Include="wwwroot\js\side.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.4.337" />
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
   </ItemGroup>
@@ -64,16 +87,21 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="resources\" />
     <Folder Include="Views\Feature\" />
-    <Folder Include="wwwroot\html\zh\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\datepicker\datepicker-template.html" />
-    <None Include="wwwroot\html\intro.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DatePicker.Common\DatePicker.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Shared.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Shared.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
