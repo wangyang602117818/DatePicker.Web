@@ -1,17 +1,17 @@
 ﻿<h5>show-format & use-format</h5>
-&nbsp;有的时候，我们展现在 界面上的格式 与 程序中使用的格式 不一致<br/>
-&nbsp;<font color="green">date-show-format</font>: 设置展示到界面的时间格式（也就是value的格式）("yyyy-MM-dd hh:mm:ss","yyyy/MM/dd hh:mm:ss","dd Month yyyy hh:mm:ss")<br/>
-&nbsp;<font color="green">data-val</font>: 是真正与程序交互的时间值("yyyy-MM-dd hh:mm:ss")<br/>
-1) 示例一<br/>
+&nbsp;Sometimes,There are some differences between show-format and use-format<br/>
+&nbsp;<font color="green">date-show-format</font>: Set the format that will display to the front-end pages(the format of the value)("yyyy-MM-dd hh:mm:ss","yyyy/MM/dd hh:mm:ss","dd Month yyyy hh:mm:ss")<br/>
+&nbsp;<font color="green">data-val</font>: The real value, We will use it in the code or save to databse("yyyy-MM-dd hh:mm:ss")<br/>
+1) Sample one<br/>
 <div style="padding-left:10px;color:green">
 &nbsp;&lt;input class="datepicker" date-show-format="dd Month yyyy hh:mm:ss"/&gt;<br />
 </div>
-&nbsp;运行效果：<br>
+&nbsp;Result:<br>
 &nbsp;&nbsp;<input type="text" class="datepicker" date-show-format="dd Month yyyy hh:mm:ss" /><br/>
-2) 示例二<br/>
+2) Sample two<br/>
 <div style="padding-left:10px;color:green">
 &nbsp;&lt;input class="datepicker" date-show-format="yyyy/MM/dd"/&gt;<br />
 </div>
-&nbsp;运行效果：<br>
+&nbsp;Result:<br>
 &nbsp;&nbsp;<input type="text" class="datepicker" date-show-format="yyyy/MM/dd" /><br/>
 
