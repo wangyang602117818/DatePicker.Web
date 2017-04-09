@@ -32,8 +32,6 @@
     <Content Include="wwwroot\html\en\intro.html" />
     <Content Include="wwwroot\html\en\language.html" />
     <Content Include="wwwroot\html\en\range.html" />
-    <Content Include="wwwroot\html\en\skin-cyan.html" />
-    <Content Include="wwwroot\html\en\skin-orange.html" />
     <Content Include="wwwroot\html\en\skin.html" />
     <Content Include="wwwroot\html\en\sourcecode.html" />
     <Content Include="wwwroot\html\en\style.html" />
@@ -59,8 +57,6 @@
     <Content Include="wwwroot\html\zh\range.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="wwwroot\html\zh\skin-cyan.html" />
-    <Content Include="wwwroot\html\zh\skin-orange.html" />
     <Content Include="wwwroot\html\zh\skin.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -73,7 +69,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="wwwroot\js\loading.js" />
-    <Content Include="wwwroot\js\side.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.4.337" />

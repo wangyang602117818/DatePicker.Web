@@ -5,7 +5,7 @@
         var item = $(this);
         var html_url = item.attr("html");
         var params = item.attr("params");
-        window.history.replaceState({},"", params);
+        window.history.replaceState({}, "", params);
         right_con.loading();
         $.get(html_url, function (data) {
             right_con.loading();
@@ -34,4 +34,8 @@ function getQueryString(name) {
    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
    var r = window.location.search.substr(1).match(reg); 
    if (r != null) return unescape(r[2]); return null; 
+}
+function selectFrom(lowerValue, upperValue) {
+    var choices = upperValue - lowerValue + 1;
+    return Math.floor(Math.random() * choices + lowerValue);
 }
