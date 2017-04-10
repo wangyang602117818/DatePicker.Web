@@ -27,6 +27,7 @@ namespace DatePicker.Web
                 .Build();
 
             host.Run();
+          
         }
     }
 }

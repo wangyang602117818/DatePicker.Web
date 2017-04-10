@@ -14,13 +14,22 @@ body {
 .fa{
     width:12px;
 }
-.top {
+.container{
     display: flex;
+    flex-direction: column;
     width: 75%;
     margin: 0 auto;
+    /*border:1px solid red;*/
+}
+.top {
+    display: flex;
+    position: fixed;
+    /*border:1px solid blue;*/
+    width:75%;
     height: 40px;
     align-items: center;
     background-color: #fff;
+    border-bottom:1px solid #FF8C00;
 }
 
 .icon {
@@ -66,23 +75,22 @@ a {
 
 .middle {
     display: flex;
-    width: 75%;
-    margin: 0 auto;
     min-height: 700px;
-    margin-top: 15px;
+    margin-top: 55px;
 }
 
 .left {
+    position: fixed;
     width:130px;
     background-color: #fff;
-    margin-right: 10px;
-    min-height: 500px;
+    min-height: 600px;
 }
 
 .right {
     flex: 1;
     background-color: #fff;
     padding-left: 15px;
+    margin-left: 140px;
     color: #34495E;
     line-height: 25px;
     overflow: hidden;
@@ -116,8 +124,6 @@ a {
     }
 .bottom {
     display: flex;
-    width: 75%;
-    margin: 0 auto;
     margin-top: 20px;
     height: 50px;
     justify-content: center;

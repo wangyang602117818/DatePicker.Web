@@ -16,6 +16,7 @@
                 current = item;
             }
             datepicker();
+            $('html,body').stop().animate({scrollTop:0},300);
         });
     });
     var tag = getQueryString("tag");
