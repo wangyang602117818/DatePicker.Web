@@ -9,27 +9,29 @@ body {
     background-color: #EEEEEE;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-attachment:fixed;
+    background-attachment: fixed;
 }
-.fa{
-    width:12px;
+
+.fa {
+    width: 12px;
 }
-.container{
+
+.container {
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 100%;
+    min-width:500px;
     margin: 0 auto;
     /*border:1px solid red;*/
 }
+
 .top {
     display: flex;
-    position: fixed;
-    width:75%;
-    min-width: 500px;
+    /*border:1px solid blue;*/
     height: 35px;
     align-items: center;
     background-color: #fff;
-    border-bottom:1px solid #FF8C00;
+    border-bottom: 1px solid #FF8C00;
 }
 
 .icon {
@@ -76,13 +78,11 @@ a {
 .middle {
     display: flex;
     min-height: 700px;
-    min-width: 500px;
-    margin-top: 50px;
+    margin-top: 15px;
 }
 
 .left {
-    position: fixed;
-    width:130px;
+    width: 100px;
     background-color: #fff;
     min-height: 600px;
 }
@@ -91,7 +91,7 @@ a {
     flex: 1;
     background-color: #fff;
     padding-left: 15px;
-    margin-left: 140px;
+    margin-left: 10px;
     color: #34495E;
     line-height: 25px;
     overflow: hidden;
@@ -105,7 +105,7 @@ a {
 
     .sub_left li {
         text-align: left;
-        padding-left: 20px;
+        padding-left: 10px;
         cursor: pointer;
         width: 100%;
         height: 35px;
@@ -123,32 +123,35 @@ a {
         color: #FF8C00;
         background-color: #E4E9EC
     }
+
 .bottom {
     display: flex;
     margin-top: 20px;
     height: 50px;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
-.lang_bar{
+.lang_bar {
     position: fixed;
     display: flex;
     right: 0;
     bottom: 0;
-    height:25px;
-    width:60px;
+    height: 25px;
+    width: 60px;
     font-weight: bold;
 }
-.lang_bar .lang_bar_txt{
-    flex:1;
-    background-color: #EB8C00;
-    text-align: center;
-    line-height: 25px;
-    margin-left: 2px;
-    cursor: pointer;
-    color: #fff;
-}
-.lang_bar .lang_bar_txt:hover{
-   background-color: #DC6900;
-}
+
+    .lang_bar .lang_bar_txt {
+        flex: 1;
+        background-color: #EB8C00;
+        text-align: center;
+        line-height: 25px;
+        margin-left: 2px;
+        cursor: pointer;
+        color: #fff;
+    }
+
+        .lang_bar .lang_bar_txt:hover {
+            background-color: #DC6900;
+        }

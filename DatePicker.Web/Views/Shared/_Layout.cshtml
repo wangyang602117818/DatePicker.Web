@@ -1,6 +1,7 @@
 ﻿@using Microsoft.Extensions.Localization
 @using DatePicker.Web
 @inject IStringLocalizer<Shared> Localizer
+@addTagHelper  Microsoft.AspNetCore.Mvc.TagHelpers.EnvironmentTagHelper, Microsoft.AspNetCore.Mvc.TagHelpers
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,47 +11,56 @@
     <meta name="description" content="datepicker,calendar,日历控件,日历框,日历">
     <link rel='icon' href='~/images/date.ico' type='image/x-ico' />
     <title>@ViewData["Title"]</title>
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/js/loading.js"></script>
-    <script src="~/js/site.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/datepicker/datepicker.min.js" template="/datepicker/datepicker-template.html" css="/datepicker/datepicker-orange.min.css"></script>
-    <link href="~/css/layout.css" rel="stylesheet" />
-    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="~/css/loading.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <environment names="Development">
+        <link href="~/css/layout.css" rel="stylesheet" />
+        <link href="~/css/loading.css" rel="stylesheet" />
+        <script src="~/js/loading.js"></script>
+        <script src="~/js/site.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <link href="~/css/layout.min.css" rel="stylesheet" />
+        <link href="~/css/loading.min.css" rel="stylesheet" />
+        <script src="~/js/loading.min.js"></script>
+        <script src="~/js/site.min.js"></script>
+    </environment>
     @RenderSection("script", false)
-    <style>
-        
-    </style>
+    <script>
+
+    </script>
 </head>
-<body style="background-image:url(../images/background/bg-3.jpg)">
-<div class="container">
-    <div class="top">
-        <a class="fa fa-calendar-check-o fa-2x icon" href="/home/intro"></a>
-        <ul class="nav-top">
-            <li>
-                <a href="/home/index" class="home">@Localizer["home"]</a>
-            </li>
-            <li>
-                <a href="/feature/index" class="feature">@Localizer["features"]</a>
-            </li>
-            <li>
-                <a href="/download/index" class="download">@Localizer["download"]</a>
-            </li>
-        </ul>
+<body style="background-image:url(../images/background/bg-1.jpg)">
+    <div class="container">
+        <div class="top">
+            <a class="fa fa-calendar-check-o fa-2x icon" href="/home/intro"></a>
+            <ul class="nav-top">
+                <li>
+                    <a href="/home/index" class="home">@Localizer["home"]</a>
+                </li>
+                <li>
+                    <a href="/feature/index" class="feature">@Localizer["features"]</a>
+                </li>
+                <li>
+                    <a href="/download/index" class="download">@Localizer["download"]</a>
+                </li>
+            </ul>
+        </div>
+        <div class="middle">
+            @RenderBody()
+        </div>
+        <div class="bottom">
+
+        </div>
+        <div class="lang_bar">
+            <a class="lang_bar_txt lang_bar_en" code="en-us">EN</a>
+            <a class="lang_bar_txt lang_bar_zh" code="zh-cn">中</a>
+        </div>
     </div>
-    <div class="middle">
-        @RenderBody()
-    </div>
-    <div class="bottom">
-        xxx备案号
-    </div>
-    <div class="lang_bar">
-        <a class="lang_bar_txt lang_bar_en" code="en-us">EN</a>
-        <a class="lang_bar_txt lang_bar_zh" code="zh-cn">中</a>
-    </div>
-</div>
 </body>
 </html>
 <script>
-  
+
 </script>

@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Server.Kestrel.Internal.Http;
+using Microsoft.AspNetCore.Http;
 
 namespace DatePicker.Web
 {
@@ -33,7 +35,7 @@ namespace DatePicker.Web
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             // Add framework services.
             services.AddMvc();
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +64,20 @@ namespace DatePicker.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.Use((context, next) =>
+            {
+                string agent = ((FrameRequestHeaders)context.Request.Headers).HeaderUserAgent;
+                bool isMobile = Shared.IsMobile(agent);
+                if (context.Request.Path.Value.EndsWith("layout.css") && isMobile)
+                {
+                    context.Request.Path = new PathString(context.Request.Path.Value.Replace("layout.css", "layout-mobile.css"));
+                }
+                if (context.Request.Path.Value.EndsWith("layout.min.css") && isMobile)
+                {
+                    context.Request.Path = new PathString(context.Request.Path.Value.Replace("layout.min.css", "layout-mobile.min.css"));
+                }
+                return next();
+            });
 
             app.UseStaticFiles();
 
