@@ -16,7 +16,6 @@ namespace DatePicker.Web
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
-
             var url = Configuration.GetValue<string>("url");
             var host = new WebHostBuilder()
                 .UseKestrel()
@@ -27,7 +26,7 @@ namespace DatePicker.Web
                 .Build();
 
             host.Run();
-          
+
         }
     }
 }
