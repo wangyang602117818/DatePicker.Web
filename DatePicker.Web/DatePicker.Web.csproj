@@ -17,11 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot/datepicker\datepicker-en.zip" />
     <Content Remove="wwwroot/htmlpage.html" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\css\home-begin.css" />
+    <Content Include="wwwroot\css\layout-mobile.css" />
     <Content Include="wwwroot\css\layout.css" />
     <Content Include="wwwroot\css\loading.css" />
     <Content Include="wwwroot\html\en\begin.html" />
