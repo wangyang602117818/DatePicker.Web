@@ -7,10 +7,11 @@ namespace DatePicker.Common
 {
     public class ZipHelper
     {
-        public static void CompressFolder(string directoryPath, string zipFile)
+        public static void CompressFolder(string sourceDirectory, string destinationFullFileName)
         {
-            if (!zipFile.EndsWith(".zip")) zipFile = zipFile + ".zip";
-            ZipFile.CreateFromDirectory(directoryPath, zipFile);
+            if (!destinationFullFileName.EndsWith(".zip")) destinationFullFileName = destinationFullFileName + ".zip";
+            ZipFile.CreateFromDirectory(sourceDirectory, destinationFullFileName);
         }
+
     }
 }

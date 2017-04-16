@@ -86,9 +86,6 @@
     <Folder Include="Views\Feature\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="wwwroot\datepicker\datepicker-template.html" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DatePicker.Common\DatePicker.Common.csproj" />
   </ItemGroup>
   <ItemGroup>
