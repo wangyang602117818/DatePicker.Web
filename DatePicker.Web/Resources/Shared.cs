@@ -32,9 +32,36 @@ namespace DatePicker.Web
         public void ZipMiniDatepicker()
         {
             var folder = Directory.GetCurrentDirectory() + @"\wwwroot\datepicker\";
-            string[] files = Directory.GetFiles(folder);
-            var jsFile = folder + @"datepicker.min.js";
-            //ZipHelper.CompressFolder(folder, folder + "datepicker.zip");
+            string[] pathArray = Directory.GetFiles(folder);
+            string datePickerEn = Directory.GetCurrentDirectory() + @"\wwwroot\datepicker-en.zip";
+            string datePickerZh = Directory.GetCurrentDirectory() + @"\wwwroot\datepicker-zh.zip";
+            Dictionary<string, string> filesEn = new Dictionary<string, string>();
+            Dictionary<string, string> filesZh = new Dictionary<string, string>();
+            foreach (string path in pathArray)
+            {
+                string fileName = Path.GetFileName(path);
+                string fileText = File.ReadAllText(path);
+                if (fileName == "datepicker.min.js")
+                {
+                    if (fileText.Contains("lang:\"en-us\""))
+                    {
+                        filesEn.Add(fileName, fileText);
+                        filesZh.Add(fileName, fileText.Replace("lang:\"en-us\"", "lang:\"zh-cn\""));
+                    }
+                    if (fileText.Contains("lang:\"zh-cn\""))
+                    {
+                        filesZh.Add(fileName, fileText);
+                        filesEn.Add(fileName, fileText.Replace("lang:\"zh-cn\"", "lang:\"en-us\""));
+                    }
+                }
+                else
+                {
+                    filesEn.Add(fileName, fileText);
+                    filesZh.Add(fileName, fileText);
+                }
+            }
+            ZipHelper.AddFileToZip(datePickerEn, filesEn);
+            ZipHelper.AddFileToZip(datePickerZh, filesZh);
         }
     }
 }

@@ -46,7 +46,7 @@
         template_second_regex = /<!--second_containter_start-->((.|\n|\r)*)<!--second_containter_end-->/,
         timeval_regex = /\d{1,2}:(\d{1,2})?(:\d{1,2})?/,         //验证文本框的日期值,是否有时间
         time_regex = /[Hh]{1,2}:([Mm]{1,2})?(:[Ss]{1,2})?/,      //作验证日期格式是否有时间
-        date_val_regex = /(\d{2,4})([-\/\.])?(\d{1,2})?(?:[-\/\.])?(\d{1,2})?\s*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?/,     //提取文本框的日期,针对中国时间
+        date_val_zh = /(\d{2,4})([-\/\.])?(\d{1,2})?(?:[-\/\.])?(\d{1,2})?\s*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?/,     //提取文本框的日期,针对中国时间
         date_val_en = /(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{2,4})\s*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?/;  //针对 dd Month yyyy hh:mm:ss 格式
     //全局对象
     var datepicker_iframe,
@@ -197,18 +197,18 @@
         datepicker.find(".title_month").off().on("click", showMonthLayer);
         datepicker.find("#hover_txt").off().on("click", showHoverLayer).on("input propertychange", function () {
             curr_time_arr[3] = $(this).find("input").val();
-            writeDate();
+            writeDate(curr_time_arr);
         });
         datepicker.find("#minute_txt").off().on("click", showMinuteLayer).on("input propertychange", function () {
             curr_time_arr[4] = $(this).find("input").val();
-            writeDate();
+            writeDate(curr_time_arr);
         });
         datepicker.find("#second_txt").off().on("click", showSecondLayer).on("input propertychange", function () {
             curr_time_arr[5] = $(this).find("input").val();
-            writeDate();
+            writeDate(curr_time_arr);
         });
         //选中了一个,冒泡
-        datepicker.off().on("click",function (event) {
+        datepicker.off().on("click", function (event) {
             var srcElement = $(event.target);
             if (srcElement.hasClass("disabled")) return false;
             var data = srcElement.text();
@@ -216,27 +216,27 @@
                 if (data <= 31 && data > 0) {
                     curr_time_arr[2] = data;
                     datepicker_iframe.hide();
-                    writeDate();
+                    writeDate(curr_time_arr);
                 }
             }
             if (srcElement.hasClass("tag_year")) {
                 var curr_year = curr_time_arr[0];  //首先保存当前年
                 curr_time_arr[0] = data;   //吧全局的年份修改了
-                text_time_arr[0] = data;   //选中天
+                text_time_arr[0] = data;   //选中年
                 if (data > curr_year) {
                     changeMainData("left");
                 } if (data < curr_year) {
                     changeMainData("right");
                 }
                 showYearLayer();
-                writeDate();
+                writeDate(curr_time_arr);
             }
             if (srcElement.hasClass("tag_month")) {
                 for (var i = 0; i < model.commonlang[model.defaults.lang].month.length; i++) {
                     if (model.commonlang[model.defaults.lang].month[i] == data) {
                         var curr_month = curr_time_arr[1];   //保存当前的月份
                         curr_time_arr[1] = i;  //修改全局月份
-                        text_time_arr[1] = i;   //选中天
+                        text_time_arr[1] = i;   //选中月
                         if (i > curr_month) {
                             changeMainData("left");
                         }
@@ -244,7 +244,7 @@
                             changeMainData("right");
                         }
                         showMonthLayer();
-                        writeDate();
+                        writeDate(curr_time_arr);
                     }
                 }
             }
@@ -252,24 +252,27 @@
                 if (data >= 0 && data <= 23) {
                     datepicker.find(".hour").val(data);
                     curr_time_arr[3] = data;
+                    text_time_arr[3] = data;
                     showHoverLayer();
-                    writeDate();
+                    writeDate(text_time_arr);
                 }
             }
             if (srcElement.hasClass("tag_minute")) {
                 if (data >= 0 && data <= 55) {
                     datepicker.find(".minute").val(data);
                     curr_time_arr[4] = data;
+                    text_time_arr[4] = data;
                     showMinuteLayer();
-                    writeDate();
+                    writeDate(text_time_arr);
                 }
             }
             if (srcElement.hasClass("tag_second")) {
                 if (data >= 0 && data <= 55) {
                     datepicker.find(".second").val(data);
                     curr_time_arr[5] = data;
+                    text_time_arr[5] = data;
                     showSecondLayer();
-                    writeDate();
+                    writeDate(text_time_arr);
                 }
             }
         });
@@ -281,29 +284,37 @@
         that.off("input propertychange").on("input propertychange", function () {
             that = $(this);
             init();
-            var date = inputDateConvert(that.val()).date; 
-            if (date && !isNaN(date.getTime())) {
-                var direct = "";
-                var year = date.getFullYear(),
-                    month = date.getMonth(),
-                    day = date.getDate(),
-                    hour = date.getHours(),
-                    minuts = date.getMinutes(),
-                    second = date.getSeconds();
-                var modifyDate = new Date(year, month, day);
-                var originDate = new Date(curr_time_arr[0], curr_time_arr[1], curr_time_arr[2]);
-                if (modifyDate > originDate) direct = "left";
-                if (modifyDate < originDate) direct = "right";
-                curr_time_arr = [date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()]
-                var usedate = dateFormat(curr_time_arr, model.defaults.useFormat);
-                that.attr("date-val", usedate);
-                text_time_arr = curr_time_arr.slice(0);
-                model.curr_time_arr = curr_time_arr;
-                if (direct) changeMainData(direct);
-            }
+            setTimeout(retrieveDate, 200);
         });
     }
-    function writeDate() {
+    //把时间从文本框，反向写入到datepicker
+    function retrieveDate() {
+        var date = inputDateConvert(that.val()).date;
+        if (date && !isNaN(date.getTime())) {
+            var direct = "";
+            var year = date.getFullYear(),
+                month = date.getMonth(),
+                day = date.getDate(),
+                hour = date.getHours(),
+                minuts = date.getMinutes(),
+                second = date.getSeconds();
+            var modifyDate = new Date(year, month, day);
+            var originDate = new Date(curr_time_arr[0], curr_time_arr[1], curr_time_arr[2]);
+            if (modifyDate > originDate) direct = "left";
+            if (modifyDate < originDate) direct = "right";
+            curr_time_arr = [date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()]
+            var usedate = dateFormat(curr_time_arr, model.defaults.useFormat);
+            that.attr("date-val", usedate);
+            text_time_arr = curr_time_arr.slice(0);
+            model.curr_time_arr = curr_time_arr;
+            datepicker.find("#hover_txt .hour").val(monthFormat(curr_time_arr[3], 2));
+            datepicker.find("#minute_txt .minute").val(monthFormat(curr_time_arr[4], 2));
+            datepicker.find("#second_txt .second").val(monthFormat(curr_time_arr[5], 2));
+            if (direct) changeMainData(direct);
+        }
+    }
+    //往文本框写入日期时间
+    function writeDate(curr_time_arr) {
         if (!curr_time_arr) {
             curr_time_arr = [date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()];
         }
@@ -648,26 +659,29 @@
                 second = resultEn[6]; hasSecond = true;
             }
             symbol = "month";
-        } else {
-            result = date_val_regex.exec(dateVal);
-            if (result[1]) {
-                year = result[1]; hasYear = true;
-            }
-            if (result[2]) symbol = result[2];
-            if (result[3]) {
-                month = result[3] - 1; hasMonth = true;
-            }
-            if (result[4]) {
-                day = result[4]; hasDay = true;
-            }
-            if (result[5]) {
-                hour = result[5]; hasHour = true;
-            }
-            if (result[6]) {
-                minute = result[6]; hasMinute = true;
-            }
-            if (result[7]) {
-                second = result[7]; hasSecond = true;
+        }
+        else {
+            var result = date_val_zh.exec(dateVal);
+            if (result) {
+                if (result[1]) {
+                    year = result[1]; hasYear = true;
+                }
+                if (result[2]) symbol = result[2];
+                if (result[3]) {
+                    month = result[3] - 1; hasMonth = true;
+                }
+                if (result[4]) {
+                    day = result[4]; hasDay = true;
+                }
+                if (result[5]) {
+                    hour = result[5]; hasHour = true;
+                }
+                if (result[6]) {
+                    minute = result[6]; hasMinute = true;
+                }
+                if (result[7]) {
+                    second = result[7]; hasSecond = true;
+                }
             }
         }
         return {
@@ -708,7 +722,7 @@
     }
     //将给出的时间范围转成数组,以便后续的比较
     function startEndDateConvert(str) {
-        var result = date_val_regex.exec(str);
+        var result = date_val_zh.exec(str);
         var year = result[1],
             month = (result[2] - 1) < 0 ? 0 : (result[2] - 1),
             day = result[3] > 0 ? result[3] : 1,

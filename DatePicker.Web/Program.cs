@@ -12,7 +12,7 @@ namespace DatePicker.Web
     {
         public static void Main(string[] args)
         {
-           new Shared().ZipMiniDatepicker();
+           new Shared().ZipMiniDatepicker();  //压缩下载文件
             var Configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)

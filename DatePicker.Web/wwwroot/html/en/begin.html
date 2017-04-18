@@ -3,13 +3,11 @@
         border-left: 2px solid #E36209;
         color: #FF8C00;
     }
-    .datepicker{
-        margin-bottom:250px;
-    }
+    
 </style>
 <h5>Beginning</h5>
 1) Download： <span id="datepickerzip"></span><br />
-2) Add jquery and datepicker.min.js references to your project(when you add datepicker.min.js reference，you must specify template and css two attributes)<br />
+2) Add jquery and datepicker.min.js references to your project(while you add datepicker.min.js reference，you must specify template and css two attributes)<br />
     &nbsp;&nbsp;&lt;script src="datepicker/datepicker.min.js" <font color="red">template</font>="path of datepicker-template.html" <font color="red">css</font>="path of datepicker-origin.min.css"&gt;&lt;/script&gt; <br />
 3) Add style class="datepicker" to your Input Tag, all is ready! <br />
 4-1) Sample code
@@ -30,6 +28,8 @@
 </div>
 4-2) Result：<br />
 &nbsp;<input class="datepicker" />
+<br />
+<br />
 <script>
     $(function () {
         var url = document.location.origin + "/datepicker-zh.zip";
