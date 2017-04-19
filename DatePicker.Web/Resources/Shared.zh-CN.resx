@@ -123,6 +123,12 @@
   <data name="beginurl" xml:space="preserve">
     <value>/html/zh/begin.html</value>
   </data>
+  <data name="dblclick" xml:space="preserve">
+    <value>双击</value>
+  </data>
+  <data name="dblclickurl" xml:space="preserve">
+    <value>/html/zh/dblclick.html</value>
+  </data>
   <data name="download" xml:space="preserve">
     <value>下载</value>
   </data>

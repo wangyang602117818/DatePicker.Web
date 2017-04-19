@@ -1,17 +1,36 @@
-﻿<h5>show-format & use-format</h5>
+﻿<h5>date-show-format & date-use-format</h5>
 &nbsp;Sometimes,There are some differences between show-format and use-format<br/>
-&nbsp;<font color="green">date-show-format</font>: Set the date format that will display to front-end pages(the date format of the value)("yyyy-MM-dd hh:mm:ss","yyyy/MM/dd hh:mm:ss","dd Month yyyy hh:mm:ss")<br/>
-&nbsp;<font color="green">data-val</font>: The real value, We will use it in the code or save to databse("yyyy-MM-dd hh:mm:ss")<br/>
-1) Sample one<br/>
+&nbsp;<font color="green">date-show-format</font>: format of the value("yyyy-MM-dd","yyyy/MM/dd","yyyy.MM.dd","dd Month yyyy")<br/>
+&nbsp;<font color="green">date-use-format</font>: format of the date-val("yyyy-MM-dd","yyyy/MM/dd","yyyy.MM.dd","dd Month yyyy")<br />
+&nbsp;<font color="green">date-val</font>: The real value which will be used in the code and saved to database, The format will be determined by date-show-format and date-use-format, default format is yyyy-MM-dd
+<br />
+<br/>
+1) Sample One: if sets date-val only, both date-show-format and date-use-format will use this format<br />
 <div style="padding-left:10px;color:green">
-&nbsp;&lt;input class="datepicker" date-show-format="dd Month yyyy hh:mm:ss"/&gt;<br />
+    &nbsp;&lt;input class="datepicker" date-val="2017-05-02 12:05:06"/&gt;<br />
 </div>
 &nbsp;Result:<br>
-&nbsp;&nbsp;<input type="text" class="datepicker" date-show-format="dd Month yyyy hh:mm:ss" /><br/>
-2) Sample two<br/>
+&nbsp;&nbsp;<input type="text" class="datepicker" date-val="2017-05-02 12:05:06" /><br /><br />
+2) Sample Two: if sets date-show-format only, date-use-format will use this format<br />
 <div style="padding-left:10px;color:green">
-&nbsp;&lt;input class="datepicker" date-show-format="yyyy/MM/dd"/&gt;<br />
+    &nbsp;&lt;input class="datepicker" date-show-format="dd Month yyyy hh:mm:ss"/&gt;<br />
 </div>
-&nbsp;Result:<br>
-&nbsp;&nbsp;<input type="text" class="datepicker" date-show-format="yyyy/MM/dd" /><br/>
+&nbsp;Result: <br>
+&nbsp;&nbsp;<input type="text" class="datepicker" date-show-format="dd Month yyyy hh:mm:ss" /><br /><br />
+3）Sample Three: if sets date-use-format only, date-show-format will use this format<br />
+<div style="padding-left:10px;color:green">
+    &nbsp;&lt;input class="datepicker" date-show-format="yyyy/MM/dd"/&gt;<br />
+</div>
+&nbsp;Sample:<br>
+&nbsp;&nbsp;<input type="text" class="datepicker" date-show-format="yyyy/MM/dd" /><br /><br />
+4）Sample Four: if sets date-use-format and date-show-format, in this case,the value that displayed to the page will not the same with the date-val we use it in the code.<br />
+<div style="padding-left:10px;color:green">
+    &nbsp;&lt;input class="datepicker" date-show-format="yyyy/MM/dd hh:mm:ss" date-use-format="yyyy-MM-dd hh:mm:ss"/&gt;<br />
+</div>
+&nbsp;Sample:<br>
+&nbsp;&nbsp;<input type="text" class="datepicker" date-show-format="yyyy/MM/dd hh:mm:ss" date-use-format="yyyy-MM-dd hh:mm:ss" />
+<br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
 

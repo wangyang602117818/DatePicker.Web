@@ -123,6 +123,12 @@
   <data name="beginurl" xml:space="preserve">
     <value>/html/en/begin.html</value>
   </data>
+  <data name="dblclick" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="dblclickurl" xml:space="preserve">
+    <value>/html/en/dblclick.html</value>
+  </data>
   <data name="download" xml:space="preserve">
     <value>Download</value>
   </data>

@@ -26,6 +26,7 @@
     <Content Include="wwwroot\css\layout.css" />
     <Content Include="wwwroot\css\loading.css" />
     <Content Include="wwwroot\html\en\begin.html" />
+    <Content Include="wwwroot\html\en\dblclick.html" />
     <Content Include="wwwroot\html\en\download.html" />
     <Content Include="wwwroot\html\en\format.html" />
     <Content Include="wwwroot\html\en\source.html" />
@@ -38,6 +39,9 @@
     <Content Include="wwwroot\html\en\style.html" />
     <Content Include="wwwroot\html\en\time.html" />
     <Content Include="wwwroot\html\zh\begin.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\html\zh\dblclick.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="wwwroot\html\zh\download.html">
