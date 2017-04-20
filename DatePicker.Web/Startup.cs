@@ -11,6 +11,7 @@ using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Server.Kestrel.Internal.Http;
 using Microsoft.AspNetCore.Http;
+using System.Threading;
 
 namespace DatePicker.Web
 {
@@ -20,8 +21,8 @@ namespace DatePicker.Web
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddJsonFile(env.ContentRootPath + "\\appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile(env.ContentRootPath + $"\\appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
 
             Configuration = builder.Build();
@@ -36,7 +37,7 @@ namespace DatePicker.Web
             // Add framework services.
             services.AddMvc();
 
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,7 +80,6 @@ namespace DatePicker.Web
                 }
                 return next();
             });
-
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
