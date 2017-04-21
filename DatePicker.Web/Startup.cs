@@ -12,17 +12,23 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Server.Kestrel.Internal.Http;
 using Microsoft.AspNetCore.Http;
 using System.Threading;
+using System.IO;
 
 namespace DatePicker.Web
 {
     public class Startup
     {
+        public static Dictionary<string, string> MobileReplaceUrls = new Dictionary<string, string>()
+        {
+            {"layout.css","layout-mobile.css" },
+            {"layout.min.css","layout-mobile.min.css" },
+        };
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile(env.ContentRootPath + "\\appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile(env.ContentRootPath + $"\\appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
 
             Configuration = builder.Build();
@@ -70,13 +76,10 @@ namespace DatePicker.Web
             {
                 string agent = ((FrameRequestHeaders)context.Request.Headers).HeaderUserAgent;
                 bool isMobile = Shared.IsMobile(agent);
-                if (context.Request.Path.Value.EndsWith("layout.css") && isMobile)
+                string fileName = Path.GetFileName(context.Request.Path.Value);
+                if (MobileReplaceUrls.ContainsKey(fileName) && isMobile)
                 {
-                    context.Request.Path = new PathString(context.Request.Path.Value.Replace("layout.css", "layout-mobile.css"));
-                }
-                if (context.Request.Path.Value.EndsWith("layout.min.css") && isMobile)
-                {
-                    context.Request.Path = new PathString(context.Request.Path.Value.Replace("layout.min.css", "layout-mobile.min.css"));
+                    context.Request.Path = new PathString(context.Request.Path.Value.Replace(fileName, MobileReplaceUrls[fileName]));
                 }
                 return next();
             });
