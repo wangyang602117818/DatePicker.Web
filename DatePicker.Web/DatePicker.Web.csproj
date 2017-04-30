@@ -97,7 +97,9 @@
     <Folder Include="Views\Feature\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatePicker.Business\DatePicker.Business.csproj" />
     <ProjectReference Include="..\DatePicker.Common\DatePicker.Common.csproj" />
+    <ProjectReference Include="..\DatePicker.Config\DatePicker.Config.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\Shared.en-US.resx">

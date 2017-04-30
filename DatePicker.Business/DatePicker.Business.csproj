@@ -5,13 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.4.3" />
-   
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DatePicker.Common\DatePicker.Common.csproj" />
     <ProjectReference Include="..\DatePicker.Config\DatePicker.Config.csproj" />
+    <ProjectReference Include="..\DatePicker.Data\DatePicker.Data.csproj" />
   </ItemGroup>
 
 </Project>
