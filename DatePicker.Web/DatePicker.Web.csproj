@@ -36,6 +36,7 @@
     <Content Include="wwwroot\html\en\dblclick.html" />
     <Content Include="wwwroot\html\en\download.html" />
     <Content Include="wwwroot\html\en\format.html" />
+    <Content Include="wwwroot\html\en\forum.html" />
     <Content Include="wwwroot\html\en\source.html" />
     <Content Include="wwwroot\html\en\init.html" />
     <Content Include="wwwroot\html\en\intro.html" />
@@ -57,6 +58,7 @@
     <Content Include="wwwroot\html\zh\format.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="wwwroot\html\zh\forum.html" />
     <Content Include="wwwroot\html\zh\init.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -95,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Feature\" />
+    <Folder Include="Views\Forum\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DatePicker.Business\DatePicker.Business.csproj" />

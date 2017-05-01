@@ -1,18 +1,18 @@
 ﻿$(function () {
-    var current = $(".sub_left .current");
-    var right_con = $(".right");
-    $(".sub_left li").click(function () {
+    var current = $(".meun_left .current");
+    var middle_con = $(".content_middle");
+    $(".meun_left li").click(function () {
         var item = $(this);
         var html_url = item.attr("html");
         var params = item.attr("params");
         window.history.replaceState({}, "", params);
-        right_con.loading();
+        middle_con.loading();
         $.ajax({
             url: html_url,
             timeout: 5000,
             type: "get",
             success: function (data) {
-                right_con.html(data);
+                middle_con.html(data);
                 if (!item.hasClass("current")) {
                     item.addClass("current");
                     current.removeClass("current");
@@ -22,7 +22,7 @@
                 $('html,body').stop().animate({ scrollTop: 0 }, 300);
             },
             complete: function (XMLHttpRequest, status) {
-                right_con.loading();
+                middle_con.loading();
                 if (status == "timeout" || status == "error") {
                     
                 }
