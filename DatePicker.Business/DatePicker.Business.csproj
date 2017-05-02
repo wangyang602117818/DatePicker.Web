@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DatePicker.Common\DatePicker.Common.csproj" />
+    <ProjectReference Include="..\DatePicker.Config\DatePicker.Config.csproj" />
+    <ProjectReference Include="..\DatePicker.Data\DatePicker.Data.csproj" />
+  </ItemGroup>
+
+</Project>

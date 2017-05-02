@@ -144,6 +144,12 @@
   <data name="formaturl" xml:space="preserve">
     <value>/html/en/format.html</value>
   </data>
+  <data name="forum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+  <data name="forumurl" xml:space="preserve">
+    <value>/html/en/forum.html</value>
+  </data>
   <data name="home" xml:space="preserve">
     <value>Home</value>
   </data>

@@ -1,5 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputType>exe</OutputType>
+  </PropertyGroup>
+
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
@@ -7,6 +11,9 @@
   <PropertyGroup>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
     <RuntimeIdentifiers>win7-x64,ubuntu.16.04-x64</RuntimeIdentifiers>
+    <ApplicationIcon />
+    <OutputTypeEx>exe</OutputTypeEx>
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,6 +36,7 @@
     <Content Include="wwwroot\html\en\dblclick.html" />
     <Content Include="wwwroot\html\en\download.html" />
     <Content Include="wwwroot\html\en\format.html" />
+    <Content Include="wwwroot\html\en\forum.html" />
     <Content Include="wwwroot\html\en\source.html" />
     <Content Include="wwwroot\html\en\init.html" />
     <Content Include="wwwroot\html\en\intro.html" />
@@ -50,6 +58,7 @@
     <Content Include="wwwroot\html\zh\format.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="wwwroot\html\zh\forum.html" />
     <Content Include="wwwroot\html\zh\init.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -88,9 +97,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Feature\" />
+    <Folder Include="Views\Forum\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatePicker.Business\DatePicker.Business.csproj" />
     <ProjectReference Include="..\DatePicker.Common\DatePicker.Common.csproj" />
+    <ProjectReference Include="..\DatePicker.Config\DatePicker.Config.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\Shared.en-US.resx">

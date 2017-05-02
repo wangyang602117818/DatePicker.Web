@@ -1,0 +1,25 @@
+@using Microsoft.Extensions.Localization
+@using DatePicker.Web
+@inject IStringLocalizer<Shared> Localizer
+@{
+    ViewData["Title"] = @Localizer["forum"];
+}
+<style>
+    .nav-top li .forum {
+        color: #3498DB;
+        border-bottom: 2px solid #3498DB;
+    }
+</style>
+<div class="content_left">
+    <ul class="meun_left">
+        <li class="current" html=@Localizer["forumurl"] id="forum" params="?tag=forum">
+            <i class="fa fa-comments" aria-hidden="true"></i>&nbsp;@Localizer["forum"]
+        </li>
+    </ul>
+</div>
+<div class="content_middle">
+
+</div>
+<div class="content_right">
+    <b>sss</b>
+</div>

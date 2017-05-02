@@ -18,6 +18,7 @@ namespace DatePicker.Web
 {
     public class Startup
     {
+        //public IConfigurationRoot Configuration { get; }
         public static Dictionary<string, string> MobileReplaceUrls = new Dictionary<string, string>()
         {
             {"layout.css","layout-mobile.css" },
@@ -25,24 +26,20 @@ namespace DatePicker.Web
         };
         public Startup(IHostingEnvironment env)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
+            //var builder = new ConfigurationBuilder()
+            //    .SetBasePath(env.ContentRootPath)
+            //    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            //    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+            //    .AddEnvironmentVariables();
 
-            Configuration = builder.Build();
+            //Configuration = builder.Build();
         }
-
-        public IConfigurationRoot Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             // Add framework services.
             services.AddMvc();
-
 
         }
 
@@ -78,9 +75,7 @@ namespace DatePicker.Web
                 bool isMobile = Shared.IsMobile(agent);
                 string fileName = Path.GetFileName(context.Request.Path.Value);
                 if (MobileReplaceUrls.ContainsKey(fileName) && isMobile)
-                {
                     context.Request.Path = new PathString(context.Request.Path.Value.Replace(fileName, MobileReplaceUrls[fileName]));
-                }
                 return next();
             });
             app.UseStaticFiles();

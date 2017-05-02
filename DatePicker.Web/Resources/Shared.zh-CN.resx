@@ -144,6 +144,12 @@
   <data name="formaturl" xml:space="preserve">
     <value>/html/zh/format.html</value>
   </data>
+  <data name="forum" xml:space="preserve">
+    <value>留言</value>
+  </data>
+  <data name="forumurl" xml:space="preserve">
+    <value>/html/zh/forum.html</value>
+  </data>
   <data name="home" xml:space="preserve">
     <value>首页</value>
   </data>
