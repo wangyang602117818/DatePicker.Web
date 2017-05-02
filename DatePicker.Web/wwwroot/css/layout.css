@@ -142,13 +142,9 @@ a {
     margin-top: 20px;
     height: 50px;
     justify-content: center;
-<<<<<<< HEAD
     align-items:center;
     font-size:12px;
     font-family:Arial;
-=======
-    align-items: center;
->>>>>>> 4ab67817ca82e579135b943a58fca3f69bd47273
 }
 
 .lang_bar {
