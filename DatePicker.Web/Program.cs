@@ -13,7 +13,7 @@ namespace DatePicker.Web
     {
         public static void Main(string[] args)
         {
-            new Shared().ZipMiniDatepicker();  //压缩下载文件
+            //new Shared().ZipMiniDatepicker();  //压缩下载文件
 
             var host = new WebHostBuilder()
                 .UseKestrel()
