@@ -11,9 +11,11 @@ body {
     background-size: 100% 100%;
     background-attachment: fixed;
 }
+
 .fa {
     width: 12px;
 }
+
 .logo {
     color: #3498DB;
     width: 40px;
@@ -164,4 +166,32 @@ a {
 
         .lang_bar .lang_bar_txt:hover {
             background-color: #DC6900;
+        }
+
+.comment_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #FF8C00;
+    height: 250px;
+}
+
+    .comment_form .comment_title {
+        width: 100%;
+        border-bottom: 1px solid #FF8C00;
+        height: 20px;
+        line-height: 20px;
+        background-color: #FFE4C4
+    }
+
+    .comment_form .comment_area {
+        border: 1px solid #ccc;
+        margin-top: 10px;
+        padding: 5px;
+        font-size: 13px;
+        width: 90%;
+        height: 100px;
+    }
+        .comment_form .comment_area:focus {
+            border: 1px solid #FF8C00;
         }
