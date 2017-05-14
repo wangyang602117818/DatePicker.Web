@@ -11,18 +11,18 @@ body {
     background-size: 100% 100%;
     background-attachment: fixed;
 }
-
-.logo path {
-    fill: #3498DB;
-}
-
-.logo:hover path {
-    fill: #297DBA;
-}
-
 .fa {
     width: 12px;
 }
+.logo {
+    color: #3498DB;
+    width: 40px;
+    text-align: center;
+}
+
+    .logo:hover {
+        color: #297DBA;
+    }
 
 .container {
     display: flex;

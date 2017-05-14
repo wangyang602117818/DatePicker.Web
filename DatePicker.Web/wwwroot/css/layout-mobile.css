@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-size: 13px;
-    font-family: 宋体;
+    font-family: "SimSun";
 }
 
 body {
@@ -16,11 +16,21 @@ body {
     width: 12px;
 }
 
+.logo {
+    color: #3498DB;
+    width: 40px;
+    text-align: center;
+}
+
+    .logo:hover {
+        color: #297DBA;
+    }
+
 .container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-width:500px;
+    min-width: 600px;
     margin: 0 auto;
     /*border:1px solid red;*/
 }
@@ -33,16 +43,6 @@ body {
     background-color: #fff;
     border-bottom: 1px solid #FF8C00;
 }
-
-.icon {
-    color: #3498DB;
-    width: 40px;
-    text-align: center;
-}
-
-    .icon:hover {
-        color: #297DBA;
-    }
 
 .nav-top {
     list-style: none;
@@ -81,29 +81,37 @@ a {
     margin-top: 15px;
 }
 
-.left {
+.content_left {
     width: 100px;
     background-color: #fff;
     min-height: 600px;
 }
 
-.right {
+.content_middle {
     flex: 1;
     background-color: #fff;
     padding-left: 15px;
+    padding-right: 10px;
     margin-left: 10px;
+    /*min-width: 300px;*/
     color: #34495E;
     line-height: 25px;
     overflow: hidden;
 }
 
-.sub_left {
+.content_right {
+    width: 150px;
+    background-color: #fff;
+    margin-left: 10px;
+}
+
+.meun_left {
     list-style: none;
     min-height: 250px;
     overflow: hidden;
 }
 
-    .sub_left li {
+    .meun_left li {
         text-align: left;
         padding-left: 10px;
         cursor: pointer;
@@ -114,11 +122,11 @@ a {
         border-left: 2px solid transparent;
     }
 
-        .sub_left li:hover {
+        .meun_left li:hover {
             background-color: #EFF3F5;
         }
 
-    .sub_left .current {
+    .meun_left .current {
         border-left: 2px solid #E36209;
         color: #FF8C00;
         background-color: #E4E9EC
