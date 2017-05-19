@@ -180,12 +180,13 @@ a {
 
     .comment_form .comment_title {
         width: 226px;
-        border: 1px solid #e8e8e8;
-        background-color: #E4E9EC;
+        /*border: 1px solid #FFA453;*/
+        background-color: #FFA453;
         height: 22px;
         line-height: 22px;
-        font-weight: bold;
-        padding-left: 2px;
+        /*font-weight: bold;*/
+        padding-left: 4px;
+        /*color: #fff;*/
     }
 
     .comment_form .comment_area {
