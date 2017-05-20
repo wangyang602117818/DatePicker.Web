@@ -24,10 +24,10 @@
             complete: function (XMLHttpRequest, status) {
                 middle_con.loading();
                 if (status == "timeout" || status == "error") {
-                    
+
                 }
             }
-        })
+        });
     });
     var tag = getQueryString("tag");
     if (tag) {

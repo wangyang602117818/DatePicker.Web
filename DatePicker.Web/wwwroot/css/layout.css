@@ -92,7 +92,7 @@ a {
 }
 
 .content_middle {
-    flex: 1;
+    flex: 3;
     background-color: #fff;
     padding-left: 15px;
     padding-right: 10px;
@@ -103,7 +103,10 @@ a {
 }
 
 .content_right {
-    width: 230px;
+    flex: 1;
+    display: flex;
+    min-width: 220px;
+    justify-content: flex-end;
     background-color: transparent;
     margin-left: 10px;
 }
@@ -169,24 +172,21 @@ a {
         }
 
 .comment_form {
+    width: 100%;
     display: flex;
-    position: absolute;
     flex-direction: column;
     align-items: center;
     background-color: #fff;
-    height: 250px;
+    height: 300px;
     overflow: hidden;
 }
 
     .comment_form .comment_title {
-        width: 226px;
-        /*border: 1px solid #FFA453;*/
-        background-color: #FFA453;
+        width: 100%;
+        background-color: #F0F0F0;
         height: 22px;
         line-height: 22px;
-        /*font-weight: bold;*/
         padding-left: 4px;
-        /*color: #fff;*/
     }
 
     .comment_form .comment_area {
@@ -199,6 +199,54 @@ a {
         font-family: inherit;
     }
 
-    .comment_form:focus .comment_area {
-        border: 1px solid #FF8C00;
+    .comment_form .checked {
+        border: 1px #EB8C00 solid;
+    }
+
+    .comment_form .comment_bottom {
+        display: flex;
+        height: 30px;
+        width: 94%;
+    }
+
+    .comment_form .comment_button {
+        flex: 1;
+        line-height: 30px;
+        font-size: 16px;
+    }
+
+.comment_button .fa {
+    display: inline-block;
+    padding: 2px;
+    width: 20px;
+    cursor: pointer;
+}
+
+    .comment_button .fa:hover {
+        color: #EB8C00
+    }
+
+.comment_form .comment_submit {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.comment_form .submit {
+    text-align: center;
+    height: 22px;
+    line-height: 22px;
+    width: 40px;
+    cursor: pointer;
+    background: #EB8C00;
+    border: 1px solid #EB8C00;
+    color: #fff;
+    box-shadow: 0px 1px 2px rgba(235,140,0,0.25);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+    .comment_form .submit:hover {
+        background: #DC6900;
     }
