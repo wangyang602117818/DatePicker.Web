@@ -135,6 +135,9 @@
   <data name="downloadurl" xml:space="preserve">
     <value>/html/zh/download.html</value>
   </data>
+  <data name="expressurl" xml:space="preserve">
+    <value>/html/en/express.html</value>
+  </data>
   <data name="features" xml:space="preserve">
     <value>功能</value>
   </data>

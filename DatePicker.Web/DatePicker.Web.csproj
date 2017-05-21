@@ -35,6 +35,7 @@
     <Content Include="wwwroot\html\en\begin.html" />
     <Content Include="wwwroot\html\en\dblclick.html" />
     <Content Include="wwwroot\html\en\download.html" />
+    <Content Include="wwwroot\html\en\express.html" />
     <Content Include="wwwroot\html\en\format.html" />
     <Content Include="wwwroot\html\en\forum.html" />
     <Content Include="wwwroot\html\en\source.html" />
@@ -55,6 +56,7 @@
     <Content Include="wwwroot\html\zh\download.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="wwwroot\html\zh\express.html" />
     <Content Include="wwwroot\html\zh\format.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
