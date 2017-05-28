@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\css\forum.css" />
     <Content Include="wwwroot\css\layout-mobile.css" />
     <Content Include="wwwroot\css\layout.css" />
     <Content Include="wwwroot\css\loading.css" />

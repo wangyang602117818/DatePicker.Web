@@ -1,8 +1,17 @@
 ﻿@using Microsoft.Extensions.Localization
 @using DatePicker.Web
 @inject IStringLocalizer<Shared> Localizer
+@addTagHelper  Microsoft.AspNetCore.Mvc.TagHelpers.EnvironmentTagHelper, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = @Localizer["forum"];
+}
+@section script{
+    <environment names="Development">
+        <link href="~/css/forum.css" rel="stylesheet" />
+    </environment>
+    <environment names="Staging,Production">
+        <link href="~/css/forum.min.css" rel="stylesheet" />
+    </environment>
 }
 <style>
     .nav-top li .forum {
@@ -12,10 +21,11 @@
 </style>
 <script>
     $(function () {
+        //线条变色
         $(".comment_txt").focus(function () {
             $(this).parent().addClass("checked");
         }).blur(function () { $(this).parent().removeClass("checked"); });
-       
+
     })
 </script>
 <div class="content_left">
@@ -55,9 +65,8 @@
                 <li><img src="~/images/express/bs.gif" /></li>
                 <li><img src="~/images/express/bz.gif" /></li>
                 <li><img src="~/images/express/yx.gif" /></li>
-                <li><img src="~/images/express/haqian.gif" /></li>
-                <li><img src="~/images/express/geiliv.gif" /></li>
-                <li><img src="~/images/express/sada.gif" /></li>
+                <li><img src="~/images/express/yawn.gif" /></li>
+                <li><img src="~/images/express/tear.gif" /></li>
                 <li><img src="~/images/express/angry.gif" /></li>
                 <li><img src="~/images/express/money.gif" /></li>
                 <li><img src="~/images/express/good.gif" /></li>
