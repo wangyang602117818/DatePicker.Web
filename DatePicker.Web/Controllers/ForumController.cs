@@ -9,6 +9,11 @@ using DatePicker.Business;
 using MongoDB.Bson;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http;
+using DatePicker.Model;
+using Microsoft.Net.Http.Headers;
+using MongoDB.Bson.IO;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace DatePicker.Web.Controllers
 {
@@ -18,11 +23,17 @@ namespace DatePicker.Web.Controllers
         {
             return View();
         }
+        [HttpGet]
         public IActionResult ExpressList()
         {
             var filter = new BsonDocument("lang", HttpContext.Items["lang"].ToString().ToLower());
             BsonDocument express = new Express().Find(filter).FirstOrDefault();
-            return Content(express.ToJson(),"application/json");
+            JsonWriterSettings writer = new JsonWriterSettings() { OutputMode = JsonOutputMode.Strict };
+            return Content(express.ToJson(writer), "application/json");
         }
+    }
+    public class M
+    {
+        public string str { get; set; }
     }
 }

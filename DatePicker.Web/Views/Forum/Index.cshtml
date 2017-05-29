@@ -25,8 +25,13 @@
         $(".comment_txt").focus(function () {
             $(this).parent().addClass("checked");
         }).blur(function () { $(this).parent().removeClass("checked"); });
+        $("#express_btn").click(function () {
+            $.get("expresslist", function (data,i) {
+                console.log(data);
 
-    })
+            });
+        });
+    });
 </script>
 <div class="content_left">
     <ul class="meun_left">
@@ -46,7 +51,7 @@
         </div>
         <div class="comment_bottom">
             <div class="comment_button">
-                <i class="fa fa-meh-o" aria-hidden="true"></i><i class="fa fa-picture-o" aria-hidden="true"></i>
+                <i class="fa fa-meh-o" aria-hidden="true" id="express_btn"></i><i class="fa fa-picture-o" aria-hidden="true" id="img_btn"></i>
             </div>
             <div class="comment_submit">
                 <div class="submit">提交</div>
