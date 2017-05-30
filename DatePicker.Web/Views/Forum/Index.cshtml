@@ -25,12 +25,31 @@
         $(".comment_txt").focus(function () {
             $(this).parent().addClass("checked");
         }).blur(function () { $(this).parent().removeClass("checked"); });
+        //express
+        var express = $(".express");
+        var textarea = $("#comment_area");
         $("#express_btn").click(function () {
-            $.get("expresslist", function (data,i) {
-                console.log(data);
-
-            });
+            if (express.is(":hidden")) {
+                $.get("expresslist", function (data) {
+                    var list = "";
+                    for (var i = 0; i < data.data.length; i++) {
+                        list += "<li><img src='" + data.data[i].url + "' title='" + data.data[i].name+"'/></li>";
+                    }
+                    express.html("<ul>" + list + "</ul>").show(300);
+                });
+            } else {
+                express.hide(300);
+            }
         });
+        //icon
+        express.click(function (event) {
+            var name = event.target.title;
+            insertText(textarea, name);
+        });
+        function insertText(textarea,txt) {
+
+
+        }
     });
 </script>
 <div class="content_left">
@@ -47,7 +66,7 @@
     <div class="comment_form">
         <div class="comment_title">评论</div>
         <div class="comment_area">
-            <textarea name="comment_area" class="comment_txt" style="width:100%;height:100%;border-width:0;border-style:none;outline:none;resize: none;"></textarea>
+            <textarea name="comment_area" id="comment_area" class="comment_txt" style="width:100%;height:100%;border-width:0;border-style:none;outline:none;resize: none;"></textarea>
         </div>
         <div class="comment_bottom">
             <div class="comment_button">
@@ -57,25 +76,8 @@
                 <div class="submit">提交</div>
             </div>
         </div>
-        <div class="express">
-            <ul>
-                <li><img src="/images/express/smile.gif" /></li>
-                <li><img src="/images/express/tootha.gif" /></li>
-                <li><img src="/images/express/heia.gif" /></li>
-                <li><img src="/images/express/laugh.gif" /></li>
-                <li><img src="~/images/express/ok.gif" /></li>
-                <li><img src="~/images/express/cry.gif" /></li>
-                <li><img src="~/images/express/cool.gif" /></li>
-                <li><img src="~/images/express/88.gif" /></li>
-                <li><img src="~/images/express/bs.gif" /></li>
-                <li><img src="~/images/express/bz.gif" /></li>
-                <li><img src="~/images/express/yx.gif" /></li>
-                <li><img src="~/images/express/yawn.gif" /></li>
-                <li><img src="~/images/express/tear.gif" /></li>
-                <li><img src="~/images/express/angry.gif" /></li>
-                <li><img src="~/images/express/money.gif" /></li>
-                <li><img src="~/images/express/good.gif" /></li>
-            </ul>
+        <div class="express" style="display:none">
+            
         </div>
     </div>
 </div>
