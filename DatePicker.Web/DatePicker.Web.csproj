@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\css\forum.css" />
     <Content Include="wwwroot\css\layout-mobile.css" />
     <Content Include="wwwroot\css\layout.css" />
     <Content Include="wwwroot\css\loading.css" />
@@ -105,6 +106,7 @@
     <ProjectReference Include="..\DatePicker.Business\DatePicker.Business.csproj" />
     <ProjectReference Include="..\DatePicker.Common\DatePicker.Common.csproj" />
     <ProjectReference Include="..\DatePicker.Config\DatePicker.Config.csproj" />
+    <ProjectReference Include="..\DatePicker.Model\DatePicker.Model.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\Shared.en-US.resx">

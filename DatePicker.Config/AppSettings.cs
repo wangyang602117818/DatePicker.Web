@@ -9,12 +9,12 @@ namespace DatePicker.Config
     public class AppSettings
     {
         public string WebSiteUrl { get; set; }
-        public MongoDb MongoDb { get; set; }
+        public MongoUrl MongoUrl { get; set; }
 
     }
-    public class MongoDb
+    public class MongoUrl
     {
-        public string Url { get; set; }
+        public string Connection { get; set; }
         public string DataBase { get; set; }
     }
 }

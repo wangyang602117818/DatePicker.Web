@@ -60,6 +60,12 @@ namespace DatePicker.Web
                 },
                 DefaultRequestCulture = new RequestCulture("en-US")
             });
+            //存储当前语言
+            app.Use((context, next) =>
+            {
+                context.Items.Add("lang", context.Features.Get<IRequestCultureFeature>().RequestCulture.Culture.Name);
+                return next();
+            });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
