@@ -35,20 +35,40 @@
                     for (var i = 0; i < data.data.length; i++) {
                         list += "<li><img src='" + data.data[i].url + "' title='" + data.data[i].name+"'/></li>";
                     }
-                    express.html("<ul>" + list + "</ul>").show(300);
+                    express.html("<ul>" + list + "</ul>").show(150);
                 });
             } else {
-                express.hide(300);
+                express.hide(150);
             }
         });
         //icon
         express.click(function (event) {
             var name = event.target.title;
-            insertText(textarea, name);
+            if (!name) return;
+            insertText(textarea, "["+name+"]");
         });
-        function insertText(textarea,txt) {
-
-
+        function insertText(input,value) {
+            if (!(input instanceof jQuery)) input = $(input);
+            input.focus();
+            var curosrPosition = input.prop("selectionStart"),
+                text = input.val(),
+                textLeft = text.substring(0, curosrPosition),
+                textRight = text.substring(curosrPosition, text.length);
+            input.val(textLeft + value + textRight);
+            setSelectionRange(input[0], curosrPosition + value.length, curosrPosition + value.length);
+        }
+        //选中，或设置光标位置
+        function setSelectionRange(input, selectionStart, selectionEnd) {
+            if (input.setSelectionRange) {
+                input.setSelectionRange(selectionStart, selectionEnd);
+            }
+            else if (input.createTextRange) {
+                var range = input.createTextRange();
+                range.collapse(true);
+                range.moveEnd('character', selectionEnd);
+                range.moveStart('character', selectionStart);
+                range.select();
+            }
         }
     });
 </script>
@@ -78,6 +98,9 @@
         </div>
         <div class="express" style="display:none">
             
+        </div>
+        <div class="imgs">
+
         </div>
     </div>
 </div>
