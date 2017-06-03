@@ -30,12 +30,13 @@
         var textarea = $("#comment_area");
         $("#express_btn").click(function () {
             if (express.is(":hidden")) {
+                express.show(150);
                 $.get("expresslist", function (data) {
                     var list = "";
                     for (var i = 0; i < data.data.length; i++) {
                         list += "<li><img src='" + data.data[i].url + "' title='" + data.data[i].name+"'/></li>";
                     }
-                    express.html("<ul>" + list + "</ul>").show(150);
+                    express.html("<ul>" + list + "</ul>");
                 });
             } else {
                 express.hide(150);
@@ -100,7 +101,15 @@
             
         </div>
         <div class="imgs">
+            <div class="img_item">
+                <div class="img_plus"></div>
+            </div>
+            <div class="img_item">
 
+            </div>
+            <div class="img_item">
+
+            </div>
         </div>
     </div>
 </div>
