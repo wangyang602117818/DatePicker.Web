@@ -207,4 +207,10 @@
   <data name="timeurl" xml:space="preserve">
     <value>/html/zh/time.html</value>
   </data>
+  <data name="validation" xml:space="preserve">
+    <value>验证</value>
+  </data>
+  <data name="validationurl" xml:space="preserve">
+    <value>/html/zh/validation.html</value>
+  </data>
 </root>

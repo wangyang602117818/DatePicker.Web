@@ -1,0 +1,20 @@
+﻿<h5>验证用户输入</h5>
+&nbsp;为了更加灵活，输入框可以输入任何内容，但是当输入的内容不是日期类型时，会自动加上一个样式 <font color="green">datepicker-error-format</font>，你可以自己定义这个样式，当日期格式不正确时，会自动提示用户。
+<br />
+<style>
+    .datepicker-error-format {
+        border: 1px solid red;
+        color: red;
+        outline:none;
+    }
+</style>
+&nbsp;示例:<br />
+<pre style="flex:1;padding-left:10px;color:green">
+.datepicker-error-format{
+      border:1px solid red;
+      color:red;
+      outline:none;
+}
+</pre>
+&nbsp;运行效果:<br>
+&nbsp;&nbsp;<input type="text" class="datepicker" /><br />

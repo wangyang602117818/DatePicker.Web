@@ -48,6 +48,7 @@
     <Content Include="wwwroot\html\en\sourcecode.html" />
     <Content Include="wwwroot\html\en\style.html" />
     <Content Include="wwwroot\html\en\time.html" />
+    <Content Include="wwwroot\html\en\validation.html" />
     <Content Include="wwwroot\html\zh\begin.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -85,6 +86,7 @@
     <Content Include="wwwroot\html\zh\time.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="wwwroot\html\zh\validation.html" />
     <Content Include="wwwroot\js\loading.js" />
   </ItemGroup>
   <ItemGroup>
