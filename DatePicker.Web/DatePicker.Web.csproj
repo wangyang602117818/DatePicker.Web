@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot/datepicker-en.zip" />
     <Content Remove="wwwroot/datepicker\datepicker-en.zip" />
     <Content Remove="wwwroot/htmlpage.html" />
   </ItemGroup>

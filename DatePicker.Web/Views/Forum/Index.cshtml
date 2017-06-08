@@ -25,17 +25,19 @@
         $(".comment_txt").focus(function () {
             $(this).parent().addClass("checked");
         }).blur(function () { $(this).parent().removeClass("checked"); });
-        //express
-        var express = $(".express");
+        var express = $(".express");  //express
+        var imgs = $(".imgs");   //img
+        var fileInput = $("#file_img"); //fileInput
         var textarea = $("#comment_area");
         $("#express_btn").click(function () {
             if (express.is(":hidden")) {
+                express.show(150);
                 $.get("expresslist", function (data) {
                     var list = "";
                     for (var i = 0; i < data.data.length; i++) {
-                        list += "<li><img src='" + data.data[i].url + "' title='" + data.data[i].name+"'/></li>";
+                        list += "<li><img src='" + data.data[i].url + "' title='" + data.data[i].name + "'/></li>";
                     }
-                    express.html("<ul>" + list + "</ul>").show(150);
+                    express.html("<ul>" + list + "</ul>");
                 });
             } else {
                 express.hide(150);
@@ -43,11 +45,26 @@
         });
         //icon
         express.click(function (event) {
-            var name = event.target.title;
+            var name = (event.target || event.srcElement).title;
             if (!name) return;
-            insertText(textarea, "["+name+"]");
+            insertText(textarea, "[" + name + "]");
         });
-        function insertText(input,value) {
+        imgs.click(function (event) {
+            var target = event.target || event.srcElement;
+            if ($(target).hasClass("img_item")) {
+                fileInput.val("");
+                fileInput.click();
+            }
+            
+
+
+        });
+
+        fileInput.change(function () {
+
+        });
+
+        function insertText(input, value) {
             if (!(input instanceof jQuery)) input = $(input);
             input.focus();
             var curosrPosition = input.prop("selectionStart"),
@@ -97,10 +114,20 @@
             </div>
         </div>
         <div class="express" style="display:none">
-            
+
         </div>
         <div class="imgs">
-
+            <div class="img_item" fileid="">
+                +
+            </div>
+            @*<div class="img_item">
+                    <div class="img_del">×</div>
+                    +
+                </div>
+                <div class="img_item">
+                    +
+                </div>*@
         </div>
     </div>
 </div>
+<input type="file" id="file_img" accept="image/gif, image/jpeg,image/png" multiple="multiple" />
