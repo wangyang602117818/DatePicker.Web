@@ -31,6 +31,7 @@ namespace DatePicker.Web.Controllers
             JsonWriterSettings writer = new JsonWriterSettings() { OutputMode = JsonOutputMode.Strict };
             return Content(express.ToJson(writer), "application/json");
         }
+        
     }
     public class M
     {

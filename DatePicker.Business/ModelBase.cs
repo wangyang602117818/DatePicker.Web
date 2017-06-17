@@ -5,20 +5,20 @@ using System.Collections.Generic;
 
 namespace DatePicker.Business
 {
-    public class MongoBase
+    public class ModelBase<T> where T : Data.MongoBase
     {
-        Data.MongoBase mongoBase;
-        public MongoBase(string collectionName)
+        public T mongoData;
+        public ModelBase(T mongoData)
         {
-            mongoBase = new Data.MongoBase(collectionName);
+            this.mongoData = mongoData;
         }
         public void InsertAsync(BsonDocument document)
         {
-            mongoBase.InsertAsync(document);
+            mongoData.InsertAsync(document);
         }
         public IEnumerable<BsonDocument> Find(BsonDocument document)
         {
-            return mongoBase.Find(document);
+            return mongoData.Find(document);
         }
     }
 }

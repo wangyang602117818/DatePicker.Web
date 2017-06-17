@@ -4,8 +4,8 @@ using System.Text;
 
 namespace DatePicker.Business
 {
-    public class Express : MongoBase
+    public class Express : ModelBase<Data.Express>
     {
-        public Express() : base("Express") { }
+        public Express() : base(new Data.Express()) { }
     }
 }
