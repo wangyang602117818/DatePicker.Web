@@ -4,8 +4,8 @@ using System.Text;
 
 namespace DatePicker.Data
 {
-    public class Express : MongoBase
+    public class ImageThumbnail : MongoBase
     {
-        public Express() : base("express") { }
+        public ImageThumbnail() : base("imageThumbnail") { }
     }
 }

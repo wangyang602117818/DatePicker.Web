@@ -52,7 +52,7 @@
         //img click
         img.click(function (event) {
             var target = event.target || event.srcElement;
-            if ($(target).attr("tag") == "add") { 
+            if ($(target).attr("tag") == "add") {
                 fileInput.val("");
                 fileInput.click();
             }
@@ -60,12 +60,36 @@
                 console.log("del");
 
             }
-            
+
 
         });
 
         fileInput.change(function () {
-            console.log("change");
+            for (var i = 0; i < this.files.length; i++) {
+                var file = this.files[i];
+                var formData = new FormData();
+                formData.append("files", file);
+                var xhr = new XMLHttpRequest();
+                var imageItem = img.children("div:last-child");
+                xhr.upload.onprogress = function (event) {
+                    var target = (event.srcElement || event.target);
+                    imageItem.children("i").attr("class", "fa fa-spinner fa-pulse");
+                }
+                xhr.onload = function (event) {
+                    var target = event.srcElement || event.target;
+                    imageItem.html("ok");
+                    console.log(JSON.parse(target.responseText));
+                    imageItem = $("<div class=\"img_item\" tag=\"add\"><i class=\"fa fa-plus\" aria- hidden=\"true\" tag=\"add\"></i></div>");
+                    img.append(imageItem);
+                }
+                xhr.onerror = function (event) {
+                    var target = event.srcElement || event.target;
+                    
+                }
+                xhr.open("post", "/image/upload");
+                xhr.send(formData);
+ 
+            }
         });
 
         function insertText(input, value) {
@@ -129,14 +153,7 @@
             <div class="img_item" fileid="" tag="add">
                 <i class="fa fa-plus" aria-hidden="true" tag="add"></i>
             </div>
-            <div class="img_item" fileid="" tag="add">
-                <i class="fa fa-plus" aria-hidden="true" tag="add"></i>
-            </div>
-            <div class="img_item">
-                <i class="fa fa-spinner fa-pulse" aria-hidden="true"></i>
-            </div>
-
         </div>
     </div>
-</div>
-<input type="file" id="file_img" accept="image/gif,image/jpeg,image/png" multiple="multiple" />
+</div> 
+<input type="file" id="file_img" multiple="multiple" accept="image/gif,image/jpeg,image/png"/>

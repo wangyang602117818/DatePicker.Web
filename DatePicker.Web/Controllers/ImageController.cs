@@ -5,15 +5,30 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Internal;
+using DatePicker.Model;
+using DatePicker.Config;
+using MongoDB.Bson;
+using System.IO;
 
 namespace DatePicker.Web.Controllers
 {
     public class ImageController : Controller
     {
+        string[] contentTypes = DatePickerConfig.AppSettings.UploadedImageContentType;
+        [HttpPost]
         public IActionResult Upload(IFormFile files)
         {
-            
-            return View();
+            if (files.Length <= 0 || !contentTypes.Contains(files.ContentType)) return Json(new ResponseModel<string>(ErrorCode.invalid_params, null));
+            Image image = new Image()
+            {
+                Id = ObjectId.GenerateNewId(),
+                Thumbnail = null,
+                FileName = files.FileName,
+                Length = files.Length,
+                Data = files.OpenReadStream(),
+                UploadDate = DateTime.Now
+            };
+            return null;
         }
     }
 }

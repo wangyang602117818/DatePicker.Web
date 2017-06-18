@@ -10,7 +10,7 @@ namespace DatePicker.Config
     {
         public string WebSiteUrl { get; set; }
         public MongoUrl MongoUrl { get; set; }
-
+        public string[] UploadedImageContentType { get; set; }
     }
     public class MongoUrl
     {
