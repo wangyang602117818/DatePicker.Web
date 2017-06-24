@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace DatePicker.Model
+namespace DatePicker.Common.Model
 {
     public class Image
     {

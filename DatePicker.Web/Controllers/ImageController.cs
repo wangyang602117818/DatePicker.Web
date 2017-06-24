@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Internal;
-using DatePicker.Model;
 using DatePicker.Config;
 using MongoDB.Bson;
 using System.IO;
+using DatePicker.Common.Model;
 
 namespace DatePicker.Web.Controllers
 {
