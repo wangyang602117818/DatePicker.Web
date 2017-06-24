@@ -343,5 +343,6 @@ a {
             }
 
             .comment_form .imgs .uploaded svg path {
-                fill: #fff;
+                fill: #fff;     /*xx的颜色*/
             }
+
