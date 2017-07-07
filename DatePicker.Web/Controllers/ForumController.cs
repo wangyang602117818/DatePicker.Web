@@ -9,7 +9,6 @@ using DatePicker.Business;
 using MongoDB.Bson;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http;
-using DatePicker.Model;
 using Microsoft.Net.Http.Headers;
 using MongoDB.Bson.IO;
 using MongoDB.Bson.Serialization;
@@ -31,6 +30,7 @@ namespace DatePicker.Web.Controllers
             JsonWriterSettings writer = new JsonWriterSettings() { OutputMode = JsonOutputMode.Strict };
             return Content(express.ToJson(writer), "application/json");
         }
+
     }
     public class M
     {

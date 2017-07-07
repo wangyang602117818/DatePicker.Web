@@ -4,8 +4,8 @@ using System.Text;
 
 namespace DatePicker.Business
 {
-    public class Express : ModelBase<Data.Express>
+    public class Image:ModelBase<Data.Image>
     {
-        public Express() : base(new Data.Express()) { }
+        public Image():base(new Data.Image()) { }
     }
 }

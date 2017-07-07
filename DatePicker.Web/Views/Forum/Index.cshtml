@@ -26,7 +26,7 @@
             $(this).parent().addClass("checked");
         }).blur(function () { $(this).parent().removeClass("checked"); });
         var express = $(".express");  //express
-        var imgs = $(".imgs");   //img
+        var img = $(".imgs");   //img
         var fileInput = $("#file_img"); //fileInput
         var textarea = $("#comment_area");
         $("#express_btn").click(function () {
@@ -43,25 +43,53 @@
                 express.hide(150);
             }
         });
-        //icon
+        //icon click
         express.click(function (event) {
             var name = (event.target || event.srcElement).title;
             if (!name) return;
             insertText(textarea, "[" + name + "]");
         });
-        imgs.click(function (event) {
+        //img click
+        img.click(function (event) {
             var target = event.target || event.srcElement;
-            if ($(target).hasClass("img_item")) {
+            if ($(target).attr("tag") == "add") {
                 fileInput.val("");
                 fileInput.click();
             }
-            
+            if ($(target).attr("tag") == "delete") {
+                console.log("del");
+
+            }
 
 
         });
 
         fileInput.change(function () {
-
+            for (var i = 0; i < this.files.length; i++) {
+                var file = this.files[i];
+                var formData = new FormData();
+                formData.append("files", file);
+                var xhr = new XMLHttpRequest();
+                var imageItem = img.children("div:last-child");
+                xhr.upload.onprogress = function (event) {
+                    var target = (event.srcElement || event.target);
+                    imageItem.children("i").attr("class", "fa fa-spinner fa-pulse");
+                }
+                xhr.onload = function (event) {
+                    var target = event.srcElement || event.target;
+                    imageItem.html("ok");
+                    console.log(JSON.parse(target.responseText));
+                    imageItem = $("<div class=\"img_item\" tag=\"add\"><i class=\"fa fa-plus\" aria- hidden=\"true\" tag=\"add\"></i></div>");
+                    img.append(imageItem);
+                }
+                xhr.onerror = function (event) {
+                    var target = event.srcElement || event.target;
+                    
+                }
+                xhr.open("post", "/image/upload");
+                xhr.send(formData);
+ 
+            }
         });
 
         function insertText(input, value) {
@@ -117,17 +145,17 @@
 
         </div>
         <div class="imgs">
-            <div class="img_item" fileid="">
-                +
+            <div class="img_item uploaded">
+                <svg viewBox="0 0 1024 1024" width="16" height="16" tag="delete">
+                    <path d="M808.877682 730.727607l-78.126568 78.115102L512.02456 590.133521 293.290843 808.843732l-78.125544-78.115102 218.733717-218.717374-218.733717-218.7317 78.125544-78.122265 218.733717 218.7317 218.726554-218.7317 78.126568 78.122265-218.726554 218.7317L808.877682 730.727607z" tag="delete"></path>
+                </svg>
             </div>
-            @*<div class="img_item">
-                    <div class="img_del">×</div>
-                    +
-                </div>
-                <div class="img_item">
-                    +
-                </div>*@
+            <div class="img_item" fileid="" tag="add">
+                <i class="fa fa-plus" aria-hidden="true" tag="add"></i>
+            </div>
+            
+            
         </div>
     </div>
-</div>
-<input type="file" id="file_img" accept="image/gif, image/jpeg,image/png" multiple="multiple" />
+</div> 
+<input type="file" id="file_img" multiple="multiple" accept="image/gif,image/jpeg,image/png"/>

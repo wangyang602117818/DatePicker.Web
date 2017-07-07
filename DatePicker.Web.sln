@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatePicker.Web", "DatePicker.Web\DatePicker.Web.csproj", "{BBFCD214-8E25-4F5B-B846-0DDB26093280}"
 EndProject
@@ -12,8 +12,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatePicker.Config", "DatePicker.Config\DatePicker.Config.csproj", "{51EE1585-CCEC-42EE-9578-AB144D593BB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatePicker.Business", "DatePicker.Business\DatePicker.Business.csproj", "{5094BE13-9472-449A-B2A5-35F28158799E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatePicker.Model", "DatePicker.Model\DatePicker.Model.csproj", "{EEF3CB6B-4D3E-4F20-AC37-98C115FFCE88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{5094BE13-9472-449A-B2A5-35F28158799E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5094BE13-9472-449A-B2A5-35F28158799E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5094BE13-9472-449A-B2A5-35F28158799E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EEF3CB6B-4D3E-4F20-AC37-98C115FFCE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEF3CB6B-4D3E-4F20-AC37-98C115FFCE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEF3CB6B-4D3E-4F20-AC37-98C115FFCE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEF3CB6B-4D3E-4F20-AC37-98C115FFCE88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
